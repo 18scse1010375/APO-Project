@@ -1,0 +1,29 @@
+{
+  "version" : 1,
+  "actionId" : "service-code-generation",
+  "userInputs" : {
+    "gitorgname" : "CCP-APO",
+    "gitreponame" : "apo-console",
+    "gitbranchname" : "main",
+    "svcCode" : "",
+    "javaversion" : "v11",
+    "nginx" : "no",
+    "class" : "AppServer",
+    "asrfeatures" : "",
+    "otherfeatures" : "",
+    "rubyversion" : "v2",
+    "goversion" : "v1",
+    "servicecode" : "",
+    "appname" : "apoconsole",
+    "language" : "nodejs",
+    "skipDefaultTeamsCreation" : "true",
+    "technology" : "",
+    "category" : "",
+    "nodejs_tessa_info_box" : "For tessa report click <a target=\"_blank\" href=\"https://snitch.corp.adobe.com/#product/node:npm:adobe:nodejsservice:latest\">here</a>",
+    "tenancy" : "multi",
+    "nodejsversion" : "v14",
+    "appdescription" : "My first hello world project",
+    "apiname" : "myfirstapi",
+    "adobeioapikey" : "asrapikey"
+  }
+}
