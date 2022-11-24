@@ -12,6 +12,7 @@
 
 # NODE
 node_modules
+build
 
 # IntelliJ
 .idea

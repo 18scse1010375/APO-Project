@@ -6,7 +6,7 @@ COPY config config
 
 COPY --chown=asruser node_modules node_modules
 
-COPY public public
+COPY build public
 
 COPY server.js server.js
 
