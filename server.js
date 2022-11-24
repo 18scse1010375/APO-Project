@@ -14,11 +14,10 @@ var app = express()
 app.use(morgan('dev'))
 app.use(constants.API_PREFIX + '/templates', express.static('templates'))
 app.use(express.static('public'))
-app.use('/', require('./api'))
-app.get('*', function (req, res) {
-  res.render('index.html.ejs')
-})
 
+app.get('/ping', (req, res) => {
+  res.send('pong');
+})
 // Server
 var server = app.listen(process.env.DEFAULT_PORT || 8080, function () {
   logger.info('Server is listening on port %d', server.address().port)
