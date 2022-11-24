@@ -20,7 +20,7 @@ app.get('/ping', (req, res) => {
 })
 // Server
 var server = app.listen(process.env.DEFAULT_PORT || 8080, function () {
-  logger.info('Server is listening on port %d', server.address().port)
+  logger.info('Server is listening on port %d, env', server.address().port)
 })
 
 /**
