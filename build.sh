@@ -5,8 +5,7 @@ export NPM_AUTH=$(echo "$auth" | grep "_auth" | awk -F " " '{print $3}')
 export NPM_EMAIL=$(echo "$auth" | grep "email" | awk -F " " '{print $3}')
 
 npm install
-
-./node_modules/.bin/gulp build
+npm run build
 
 if [ $TESSA2_API_KEY ]; then
   echo "TESSA2_API_KEY found in environment variable"
