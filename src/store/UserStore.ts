@@ -1,4 +1,4 @@
-import { UserProfile } from '../model/ims';
+import { UserProfile } from '../models/ims';
 import {profilePictureBaseUrl} from '../constants';
 import { action, makeObservable, observable } from 'mobx';
 

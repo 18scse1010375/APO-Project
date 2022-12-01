@@ -1,21 +1,16 @@
 import { Header } from 'Header';
 import './App.css';
-import { adobeIms, login, updateUserProfile} from './services/AdobeIms';
+import { adobeIms, logout } from './services/AdobeIms';
 import { userStore } from './store/UserStore';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
+import { setEnv } from 'configs';
 
 const signIn = ()=> {
   adobeIms.signIn();
 }
 
-const logout = () => {
-  try {
-    adobeIms.signOut();
-    let profile = null;
-    userStore.updateData(profile, 'token');
-  } catch (e) {
-    console.error('logout', e);
-  }
+const signOut = () => {
+  logout();
 }
 
 function App() {
@@ -27,6 +22,11 @@ function App() {
     }
   }, [userStore.isImsInit]);
 
+  useEffect(() => {
+    fetch("/env")
+    .then(async res => setEnv(await res.json()));
+  })
+
   return (
     <div className="App">
       <Header store = {userStore}></Header>
@@ -35,7 +35,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <button onClick={signIn}>Sign in</button>
-        <button onClick={logout}>Sign out</button>
+        <button onClick={signOut}>Sign out</button>
         <a
           className="App-link"
           href="https://reactjs.org"
