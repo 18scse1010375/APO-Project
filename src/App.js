@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import TabBar from './components/TabBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MakeHeader from './components/MakeHeader';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import MakeCard from './components/MakeCard';
+import MakeLabel  from './components/MakeLabel';
+import Login from './components/Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+ <Router>
+
+  <Routes>
+  <Route exact path='/login' element={ <Login/>} >  </Route> 
+  </Routes>
+
+      {/* <Header/> */}
+
+      <Routes>
+         <Route exact path='/home' element={  < MakeCard />}></Route> 
+         <Route exact path='/email-suppresion' element={< MakeLabel/>}>  </Route>  
+         <Route exact path='/bulk-email-sent' element={< MakeHeader/>}>  </Route>
+        
+         
+          </Routes>
+     
+    </Router>  
     </div>
   );
 }
