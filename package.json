@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "tessa-npm-plugin": "tessa-npm-plugin update",
-    "start": "set HTTPS=true&&react-scripts start",
+    "start": "export HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -19,32 +19,23 @@
   "author": "ASR-Eng@adobe.com",
   "license": "UNLICENSED",
   "dependencies": {
-    "@adobe/react-spectrum": "^3.23.0",
     "@identity/imslib": "^0.38.0",
-    "@react-spectrum/menu": "^3.9.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "body-parser": "^1.19.0",
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.2",
     "config": "^3.2.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
-    "react-toastify": "^9.1.1",
-    "reactstrap": "^9.1.5",
     "web-vitals": "^2.1.4",
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@adobe/tessa-npm-plugin": "^1.0.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-less": "^4.0.1",
@@ -52,7 +43,8 @@
     "gulp-nodemon": "^2.4.2",
     "gulp-plumber": "^1.2.1",
     "gulp-uglify": "^3.0.2",
-    "merge-stream": "^2.0.0"
+    "merge-stream": "^2.0.0",
+    "@adobe/tessa-npm-plugin": "^1.0.0"
   },
   "eslintConfig": {
     "extends": [
