@@ -18,6 +18,20 @@ app.use(express.static('public'))
 app.get('/ping', (req, res) => {
   res.send('pong');
 })
+
+app.get('/env', (req, res) => {
+  var obj = {};
+  obj.status = 'ok';
+  obj.isProd = process.env.IS_PROD;
+  obj.currentEnv = process.env.CURRENT_ENV;
+  obj.imsClientId = process.env.IMS_CLIENT_ID;
+  obj.serviceApiKey = process.env.SERVICE_API_KEY;
+  obj.serviceHost = process.env.SERVICE_HOST;
+  obj.maxFileSizeMB = process.env.MAX_FILESIZE_IN_MB;
+  obj.imsEnvironment = process.env.IMS_ENV;
+  res.json(obj);
+})
+
 // Server
 var server = app.listen(process.env.DEFAULT_PORT || 8080, function () {
   logger.info('Server is listening on port %d, env', server.address().port)
