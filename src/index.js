@@ -11,6 +11,6 @@ import App1 from './App1';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  
-    <Login/>
-    // <MakeCard/>
+    <App1/>
+    
   );

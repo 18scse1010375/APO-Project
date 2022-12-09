@@ -1,7 +1,8 @@
 import { AdobeIMS } from '@identity/imslib';
 import { IAdobeIdData } from '@identity/imslib/adobe-id/IAdobeIdData';
 import { IEnvironment } from '@identity/imslib/adobe-id/IEnvironment';
-import { userStore } from '../store/UserStore';
+import { UserStore } from '../store/UserStore';
+
 
 export const getImsScopes = (): string => {
   return ['AdobeID', 'openid'].filter(Boolean).join(',');

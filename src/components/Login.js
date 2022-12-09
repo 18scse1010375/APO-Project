@@ -1,7 +1,9 @@
 import React from "react";
 import {Button, defaultTheme, Provider} from '@adobe/react-spectrum';
 import  LoginStyle from  './LoginStyle.css';
-import { adobeIms, logout } from '.\\services\\AdobeIms';
+
+import { adobeIms,logout } from "../services/AdobeIms.ts";
+
 
 const signIn = ()=> {
   adobeIms.signIn();
@@ -24,8 +26,8 @@ const Login=()=>{
               <Provider theme={defaultTheme}>
                 <div className="sign-in">
                 
-              <Button onClick={signIn} id="button"   tag='a' href="/user" variant="accent"  >   Sign In  </Button>
-              <Button onClick={signOut} id="button"   tag='a' href="/user" variant="accent"  >   Sign Out  </Button>
+              <Button onClick={signIn}  id="button"   tag='a' href="/user" variant="accent"  >   Sign In  </Button>
+              <Button onClick={signOut}  id="button"   tag='a' href="/user" variant="accent"  >   Sign Out  </Button>
               </div>
               </Provider>
               </div>

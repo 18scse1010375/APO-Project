@@ -14,7 +14,7 @@ function App1() {
  <Router>
 
   <Routes>
-  <Route exact path='/login' element={ <Login/>} >  </Route> 
+  <Route exact path='/' element={ <Login/>} >  </Route> 
   </Routes>
 
       {/* <Header/> */}
