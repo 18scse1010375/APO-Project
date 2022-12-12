@@ -1,7 +1,9 @@
 import { AdobeIMS } from '@identity/imslib';
 import { IAdobeIdData } from '@identity/imslib/adobe-id/IAdobeIdData';
 import { IEnvironment } from '@identity/imslib/adobe-id/IEnvironment';
-import { UserStore } from '../store/UserStore';
+
+import { userStore } from '../store/UserStore';
+import React from "react";
 
 
 export const getImsScopes = (): string => {

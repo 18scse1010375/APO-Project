@@ -1,4 +1,4 @@
-import { Header } from 'Header';
+import { Header } from './Header';
 import './App.css';
 // import { adobeIms, logout } from './services/AdobeIms';
 // import { userStore } from './store/UserStore';
