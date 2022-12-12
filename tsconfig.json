@@ -25,7 +25,7 @@
     "downlevelIteration": true,
     "useDefineForClassFields": true,
   },
-  "include": [
-, "utils"    "src/**/*"
-  ]
+  "include":   [ "utils"  ,  "src" ]
+
+  
 }
