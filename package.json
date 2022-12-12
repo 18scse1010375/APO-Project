@@ -33,6 +33,7 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
     "config": "^3.2.0",
+    "configs": "^1.0.3",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "mobx": "^6.7.0",

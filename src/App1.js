@@ -7,10 +7,13 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import MakeCard from './components/MakeCard';
 import MakeLabel  from './components/MakeLabel';
 import Login from './components/Login';
+import {useEffect} from 'react';
 import { userStore } from './store/UserStore';
-import { useEffect } from 'react';
-import { setEnv } from 'configs';
+
+import setEnv from 'configs';
 import { adobeIms } from './services/AdobeIms';
+//import { adobeIms } from './services/AdobeIms';
+
 
 function App1() {
 

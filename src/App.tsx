@@ -1,31 +1,31 @@
 import { Header } from 'Header';
 import './App.css';
-import { adobeIms, logout } from './services/AdobeIms';
-import { userStore } from './store/UserStore';
-import { useEffect } from 'react';
-import { setEnv } from 'configs';
+// import { adobeIms, logout } from './services/AdobeIms';
+// import { userStore } from './store/UserStore';
+// import { useEffect } from 'react';
+// import { setEnv } from 'configs';
 
-const signIn = ()=> {
-  adobeIms.signIn();
-}
+// const signIn = ()=> {
+//   adobeIms.signIn();
+// }
 
-const signOut = () => {
-  logout();
-}
+// const signOut = () => {
+//   logout();
+// }
 
 function App() {
 
-  useEffect(() => {
-    if (!userStore.isImsInit) {
-      adobeIms.initialize();
-      userStore.setImsInit(true);
-    }
-  }, [userStore.isImsInit]);
+  // useEffect(() => {
+  //   if (!userStore.isImsInit) {
+  //     adobeIms.initialize();
+  //     userStore.setImsInit(true);
+  //   }
+  // }, [userStore.isImsInit]);
 
-  useEffect(() => {
-    fetch("/env")
-    .then(async res => setEnv(await res.json()));
-  })
+  // useEffect(() => {
+  //   fetch("/env")
+  //   .then(async res => setEnv(await res.json()));
+  // })
 
   return (
     <div className="App">
