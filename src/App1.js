@@ -12,7 +12,6 @@ import { userStore } from './store/UserStore';
 
 import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
-//import { adobeIms } from './services/AdobeIms';
 
 
 function App1() {
