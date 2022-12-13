@@ -9,7 +9,8 @@ import Login from './components/Login';
 import {useEffect} from 'react';
 import { userStore } from './store/UserStore';
 
-import setEnv from 'configs';
+
+import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
 //import { adobeIms } from './services/AdobeIms';
 

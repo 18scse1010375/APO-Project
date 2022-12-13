@@ -1,3 +1,4 @@
+import { CompletionInfoFlags } from "typescript";
 import { EnvVars } from "./models/envs.model";
 export let env: EnvVars = {
   status: 'error',
@@ -11,3 +12,4 @@ export let env: EnvVars = {
 export const setEnv = (data: EnvVars) => {
   env = {...data};
 };
+
