@@ -12,6 +12,7 @@ import { userStore } from './store/UserStore';
 
 import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
+import { Header } from 'Header';
 
 
 function App1() {
@@ -28,14 +29,20 @@ function App1() {
         .then(async res => setEnv(await res.json()));
       })
   return (
-    <div>
+    <div> 
+      <div className='text-center'>
+    <Header store = {userStore}></Header>
+    </div>
+
+
  <Router>
 
   <Routes>
   <Route exact path='/' element={ <Login/>} >  </Route> 
+  <Route exact path='/logout' element={ <Login/>} >  </Route>
   </Routes>
 
-      {/* <Header/> */}
+      
 
       <Routes>
          <Route exact path='/home' element={  < MakeCard />}></Route> 

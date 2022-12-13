@@ -3,6 +3,11 @@ import React from "react"
 import User from '@spectrum-icons/workflow/User';
 import {Header,Provider,defaultTheme,onAction,ActionButton,ActionMenu,Item,ListBox}from '@adobe/react-spectrum'
 import header from './header.css'
+import { logout } from "services/AdobeIms";
+
+const signOut = () => {
+    logout();
+  }
 const MakeHeader=()=>{
     return(
 
@@ -59,14 +64,14 @@ const MakeHeader=()=>{
 
     <Provider>
          <MenuTrigger>
-         <ActionButton aria-label="Icon only" >
+         <ActionButton aria-label="Icon only" href="/logout" >
           <User/>
           </ActionButton>
 
           <Menu>
 
 
-        <Item tag="a" href="/login">Logout  </Item>
+        <Item>   <a onClick={signOut} href="/logout">Logout </a>   </Item>
 
          </Menu>
 

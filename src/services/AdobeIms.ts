@@ -4,6 +4,7 @@ import { IEnvironment } from '@identity/imslib/adobe-id/IEnvironment';
 
 import { userStore } from '../store/UserStore';
 import React from "react";
+import { redirect } from 'react-router-dom';
 
 
 export const getImsScopes = (): string => {
@@ -36,6 +37,7 @@ export const logout = () => {
 export const updateUserProfile = () => {
   adobeIms.getProfile().then(profile => {
     userStore.updateData(profile, adobeIms.getAccessToken().token)
+
   }).catch( ex => {
     console.error('profile', ex);
   });

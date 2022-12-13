@@ -3,6 +3,9 @@ import {Button, defaultTheme, Provider} from '@adobe/react-spectrum';
 import  LoginStyle from  './LoginStyle.css';
 
 import { adobeIms,logout } from "../services/AdobeIms.ts";
+import { Header } from "Header";
+
+import { userStore } from "store/UserStore";
 
 
 const signIn = ()=> {
@@ -15,7 +18,12 @@ const signOut = () => {
 
 const Login=()=>{
     return(
+
+           
         <div id="login-page" className="text-center" >
+
+
+         
 
           
 
@@ -28,8 +36,8 @@ const Login=()=>{
               <Provider theme={defaultTheme}>
                 <div className="sign-in">
                 
-              <Button onClick={signIn}  id="button"   tag='a' href="/user" variant="accent"  >   Sign In  </Button>
-              <Button onClick={signOut}  id="button"   tag='a' href="/user" variant="accent"  >   Sign Out  </Button>
+              <Button onClick={signIn}  id="button"   tag='a' href="/User-login" variant="accent"  >   Sign In  </Button>
+              <Button onClick={signOut}  id="button"   tag='a' href="/logout" variant="accent"  >   Sign Out  </Button>
               </div>
               </Provider>
               </div>
