@@ -37,6 +37,7 @@ export const logout = () => {
 export const updateUserProfile = () => {
   adobeIms.getProfile().then(profile => {
     userStore.updateData(profile, adobeIms.getAccessToken().token)
+    //  window.location.href = '/home'
 
   }).catch( ex => {
     console.error('profile', ex);

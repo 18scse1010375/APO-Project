@@ -4,14 +4,47 @@ import User from '@spectrum-icons/workflow/User';
 import {Header,Provider,defaultTheme,onAction,ActionButton,ActionMenu,Item,ListBox}from '@adobe/react-spectrum'
 import header from './header.css'
 import { logout } from "services/AdobeIms";
+import { useState,useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import { adobeIms } from "services/AdobeIms";
 
-const signOut = () => {
-    logout();
-  }
+
+
 const MakeHeader=()=>{
-    return(
+    const [isLogin, setIsLogin] = useState(true);
 
+    const signOut = () => {
+        logout();
+        setIsLogin(true)
+      }
+    
+
+    useEffect(() => {
+    
+        if (!adobeIms.isSignedInUser()) {
+        
+          // updateUserProfile();
+          
+          setIsLogin(false)
+        }
+    
+    }, []  )  ;
+
+    return(
+        !isLogin ? (
+            <Navigate to="/" replace={true}  />
+          ) :   <> 
+  
        <div>
+
+
+
+
+
+
+
+
+
           <Provider theme={defaultTheme}>
             <Header > 
                 <div className="header-background"  >
@@ -60,30 +93,36 @@ const MakeHeader=()=>{
 
 
    <div className="user-icon">
-   {/* style={{marginLeft:'1169px',marginTop:'-30px',fontSize:'9px',paddingBottom:'19px'}} */}
+   
+<MenuTrigger>
 
-    <Provider>
-         <MenuTrigger>
-         <ActionButton aria-label="Icon only" href="/logout" >
-          <User/>
-          </ActionButton>
+  <ActionButton>
+    <User/>
+  </ActionButton>
 
-          <Menu>
+  <Menu >
+
+   <Item   key="logout"> <button className="btb btn-outline" tag="a" onClick={signOut}  href="/logout" > Logout</button></Item>
+  </Menu>
+  
+</MenuTrigger>
 
 
-        <Item>   <a onClick={signOut} href="/logout">Logout </a>   </Item>
 
-         </Menu>
 
-      </MenuTrigger>
-        </Provider>
+
+
+
+
 </div>
 </div>
 
             </Header>
             </Provider>
 
+
         </div>
+        </>
     )
 
 
