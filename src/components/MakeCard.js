@@ -1,24 +1,38 @@
 import React from "react";
+import Email from '@spectrum-icons/workflow/Email';
+import bulk from '@spectrum-icons/workflow/EmailGear'
+
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 import MakeHeader from "./MakeHeader";
 const MakeCard=()=>{
     return(
         <div>
+           
             <MakeHeader/>
-        <Card style={{width:'200px',margin:'25px',display:"inline-block"}}>
+        <Card className="text-center" style={{width:'200px',margin:'29px',display:"inline-block",height:'320px'}}>
             <CardBody>
-                <CardImg height={91} src="https://cmconsole-dev-va7.stage.cloud.adobe.io/assets/icons/open-document2.svg"></CardImg>
-                <CardTitle><h5 style={{paddingLeft:'20px',fontWeight:"lighter",fontSize:"17px",height:'40px',paddingTop:'5px'}}>Email-Suppression</h5></CardTitle>
+
+                <div className="text-center mx-4" style={{fontSize:'25px' , width:'120px'   }}> 
+                    
+                    <Email/>  
+                   
+                </div>
+               
+                {/* <CardImg height={91} src="https://cmconsole-dev-va7.stage.cloud.adobe.io/assets/icons/open-document2.svg"></CardImg> */}
+                <CardTitle><h4 style={{paddingLeft:'20px',fontWeight:"lighter",fontSize:"17px",height:'40px',paddingTop:'5px'}}>Email-Suppression</h4></CardTitle>
                 <hr/>
+                
                 <CardText>Search/View/Create a content from a content source or a content template </CardText>
             </CardBody>
         </Card>
 
 
-<Card style={{marginTop:'20px',width:'200px',height:'290px',margin:'25px',display:"inline-block"}}>
-<CardBody style={{marginTop:'16px'}}>
-    <CardImg height={92} style={{paddingTop:'1px'}} src="https://cmconsole-dev-va7.stage.cloud.adobe.io/assets/icons/open-document2.svg"></CardImg>
-    <CardTitle><h5 style={{paddingLeft:'35px',fontWeight:"lighter",fontSize:"17px",marginTop:'2px'}}>Bulk-Email-Sent</h5></CardTitle>
+<Card style={{marginTop:'26px',width:'200px',height:'320px',margin:'25px',display:"inline-block"}}>
+<CardBody style={{marginTop:'18px'}}>
+    <div className="text-center my-1" style={{marinTop:'2px'}}>
+    <CardImg className="text-center mx-4 " style={{width:'120px',marginTop:'-5px'}} src="https://spectrum.adobe.com/static/icons/workflow_18/Smock_EmailGear_18_N.svg"></CardImg>
+    </div>
+    <CardTitle><h4 style={{paddingLeft:'35px',fontWeight:"lighter",fontSize:"17px",marginTop:'-2px'}}>Bulk-Email-Sent</h4></CardTitle>
     <hr/>
     <CardText>Search/View/Create a content from a content source or a content template </CardText>
 </CardBody>

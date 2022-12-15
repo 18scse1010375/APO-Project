@@ -8,23 +8,26 @@ import { useState,useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { adobeIms } from "services/AdobeIms";
 
-
-
 const MakeHeader=()=>{
     const [isLogin, setIsLogin] = useState(true);
 
     const signOut = () => {
         logout();
         setIsLogin(true)
-      }
-    
+      }  
 
-    useEffect(() => {
+
+const logout1 = 'logout';
+
+  const actionOnMenu = (key) => {
+    if(key === logout1) {
+      signOut()
+    }
+  }
+
+        useEffect(() => {
     
         if (!adobeIms.isSignedInUser()) {
-        
-          // updateUserProfile();
-          
           setIsLogin(false)
         }
     
@@ -37,25 +40,13 @@ const MakeHeader=()=>{
   
        <div>
 
-
-
-
-
-
-
-
-
-          <Provider theme={defaultTheme}>
+ <Provider theme={defaultTheme}>
             <Header > 
                 <div className="header-background"  >
-                {/* style={{backgroundColor:'#F4F4F4'}} */}
-
-
-
-            <Flex direction="column"  height="19px" >
+               
+ <Flex direction="column"  height="19px" >
             <div className="adobe-icon" >
-            {/* style={{width:'32px',marginLeft:'19px',marginTop:'16px'} */}
-            <Image src="https://spectrum.adobe.com/static/adobe_logo_spectrum_site.svg" alt="Sky and roof"  />
+              <Image src="https://spectrum.adobe.com/static/adobe_logo_spectrum_site.svg" alt="Sky and roof"  />
             </div>
 
             </Flex>
@@ -63,56 +54,34 @@ const MakeHeader=()=>{
 
 
              <div className="c1" >
-             {/* tyle={{display:'inline-block', fontSize: '15px'} */}
-            <a id="apo-console"  tag='a' href="/home" > APO Console   </a>
-
-            {/* style={{display:'inline-block',fontSize:'18px',marginLeft:'70px',textDecoration:'none',color: 'red',fontWeight:'bold'
-        }} */}
-
-            </div>
+             <a id="apo-console"  tag='a' href="/home" > APO Console   </a>
+      </div>
 
 
         <div className="email-suppresion" >
-        {/* style={{display:'inline-block',fontSize:'18px',fontWeight:'bold',color:'white',marginLeft:'44px'}} */}
-
          <a id="email" href="email-suppresion" > Email Suppression </a>
-         {/* style={{textDecoration:'none',color:'#747474'}} */}
 
         </div>
 
         <div className="bulk-email-sent">
-        {/* style={{display:'inline-block',fontSize:'18px',fontWeight:'bold',color:'white',marginLeft:'34px'} */}
          <a id="bulk" href="bulk-email-sent" > Bulk Email Sent </a>
-         {/* style={{textDecoration:'none',color:'#747474'}} */}
          </div>
 
-
-
-
-
-
-
-   <div className="user-icon">
+<div className="user-icon">
    
-<MenuTrigger>
+   <Provider>
+         <MenuTrigger>
+         <ActionButton aria-label="Icon only" href="/logout" >
+          <User/>
+          </ActionButton>
 
-  <ActionButton>
-    <User/>
-  </ActionButton>
+          <Menu    onAction={ (key) => actionOnMenu(key)}  >
+          <Item key={logout1} >Logout</Item>
+            </Menu>
 
-  <Menu >
-
-   <Item   key="logout"> <button className="btb btn-outline" tag="a" onClick={signOut}  href="/logout" > Logout</button></Item>
-  </Menu>
-  
-</MenuTrigger>
-
-
-
-
-
-
-
+         
+      </MenuTrigger>
+        </Provider>
 
 </div>
 </div>
@@ -129,3 +98,6 @@ const MakeHeader=()=>{
 }
 
 export default MakeHeader;
+
+
+

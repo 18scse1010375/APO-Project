@@ -8,23 +8,11 @@ import MakeLabel  from './components/MakeLabel';
 import Login from './components/Login';
 import {useEffect,useState} from 'react';
 import { userStore } from './store/UserStore';  
-
-
-
 import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
 import { Header } from 'Header';
-
-
 function App1() {
   const [isLogin, setIsLogin] = useState(false);
-
- 
-  
-
-
-  // const navigate=useNavigate();
-
     useEffect(() => {
         if (!userStore.isImsInit) {
           adobeIms.initialize();
@@ -35,21 +23,11 @@ function App1() {
         console.log("adobeIms.signIn()"  ,     adobeIms.isSignedInUser()    )
 
         if (adobeIms.isSignedInUser()) {
-          // updateUserProfile();
-         
           console.log("adobeims" ,  adobeIms  )  
           setIsLogin(true)
-          
+           }
 
-          
-          
-          
-        }
-
-
-
-
-      }, [userStore.isImsInit]);
+ }, [userStore.isImsInit]);
     
       useEffect(() => {
         fetch("/env")
@@ -57,30 +35,13 @@ function App1() {
       })
   return (
     <div> 
-      <div className='text-center'>
-    <Header store = {userStore}></Header>
-    </div>
-
-
+     
  <Router>
-
-
-
-  <Routes>
- 
+ <Routes>
   <Route exact path='/' element={ <Login/>} >  </Route>  
-
- 
-
-
-
-  
-  <Route exact path='/logout' element={ <Login/>} >  </Route>
+<Route exact path='/logout' element={ <Login/>} >  </Route>
   </Routes>
-
-      
-
-      <Routes>
+ <Routes>
          <Route exact path='/home' element={  < MakeCard />}></Route> 
          <Route exact path='/email-suppresion' element={< MakeLabel/>}>  </Route>  
          <Route exact path='/bulk-email-sent' element={< MakeHeader/>}>  </Route>

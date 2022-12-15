@@ -54,7 +54,7 @@ const adobeData: IAdobeIdData = {
   onAccessTokenHasExpired: (): any => ({}),
   onReauthAccessToken: (): any => ({}),
   onReady: login,
-  onError: (): any => ({}), // eslint-disable-line
+  onError: (): any => ({}), 
 };
 
 
