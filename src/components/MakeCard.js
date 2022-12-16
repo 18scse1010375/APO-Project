@@ -9,10 +9,10 @@ const MakeCard=()=>{
         <div>
            
             <MakeHeader/>
-        <Card className="text-center" style={{width:'200px',margin:'29px',display:"inline-block",height:'320px'}}>
+        <Card className="text-center" style={{width:'200px',margin:'32px',display:"inline-block",height:'344px'}}>
             <CardBody>
 
-                <div className="text-center mx-4" style={{fontSize:'25px' , width:'120px'   }}> 
+                <div className="text-center mx-4 my-2" style={{fontSize:'25px' , width:'125px'   }}> 
                     
                     <Email/>  
                    
@@ -27,14 +27,14 @@ const MakeCard=()=>{
         </Card>
 
 
-<Card style={{marginTop:'26px',width:'200px',height:'320px',margin:'25px',display:"inline-block"}}>
-<CardBody style={{marginTop:'18px'}}>
-    <div className="text-center my-1" style={{marinTop:'2px'}}>
-    <CardImg className="text-center mx-4 " style={{width:'120px',marginTop:'-5px'}} src="https://spectrum.adobe.com/static/icons/workflow_18/Smock_EmailGear_18_N.svg"></CardImg>
-    </div>
-    <CardTitle><h4 style={{paddingLeft:'35px',fontWeight:"lighter",fontSize:"17px",marginTop:'-2px'}}>Bulk-Email-Sent</h4></CardTitle>
+<Card style={{marginTop:'34px',width:'200px',height:'343px',margin:'25px',display:"inline-block"}}>
+<CardBody style={{marginTop:'8px'}}>
+    {/* <div className="text-center my-1" style={{marginBottom:'5px'}}> */}
+    <CardImg className="text-center mx-4 " style={{width:'125px',marginBottom:'15px'}} src="https://spectrum.adobe.com/static/icons/workflow_18/Smock_EmailGear_18_N.svg"></CardImg>
+    {/* </div> */}
+    <CardTitle><h4 style={{paddingLeft:'35px',fontWeight:"lighter",fontSize:"17px",paddingBottom:'12px'}}>Bulk-Email-Sent</h4></CardTitle>
     <hr/>
-    <CardText>Search/View/Create a content from a content source or a content template </CardText>
+    <CardText className="text-center">Search/View/Create a content from a content source or a content template </CardText>
 </CardBody>
 </Card>
 
