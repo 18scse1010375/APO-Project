@@ -1,0 +1,38 @@
+.main-card-1{
+    width: 200px;
+    margin:32px;
+    display:inline-block ;
+    height:344px ;
+}
+.email-icon{
+    font-size:25px ;
+    width:125px ;;
+}
+.email-text{
+      padding-left:20px ;
+        font-weight: lighter;
+        font-size:17px ;
+        height:40px ;
+        padding-top:5px
+}
+.main-card-2{
+    margin-top:34px;
+    width:200px ;
+    height:343px ;
+    margin:25px ;
+    display:inline-block
+}
+.bulk-image{
+    width:125px;
+    margin-bottom:15px
+}
+.bulk-text{
+    padding-left:35px ;
+    font-weight: lighter ;
+    font-size:17px ;
+    padding-bottom: 12px
+}
+
+.card-body-2{
+    margin-top:8px; 
+}

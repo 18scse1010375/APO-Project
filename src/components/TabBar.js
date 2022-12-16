@@ -1,37 +1,26 @@
 import React from "react";
-import {Button, Container,Nav,NavItem,NavLink} from 'reactstrap'
-
-
+import {Nav,NavItem,NavLink} from 'reactstrap'
+ 
 const TabBar=()=>{
     return(
-        <div style={{display:"inline-block"}}>
+        <div className="tabDesign" >
   <Nav>
 
-
-
-  <NavItem>
-
+<NavItem>
 <NavLink
   active
   href="/home">
  <h4> APO Console</h4>
 </NavLink>
-
 </NavItem>
 
-
-
-  <NavItem>
+<NavItem>
     <NavLink href="email-suppression">
     <h4>  Email Suppression </h4>
     </NavLink>
   </NavItem>
 
-
-
-
-
-  <NavItem>
+<NavItem>
     <NavLink
       href="bulk-email-sent"
     >
@@ -40,12 +29,7 @@ const TabBar=()=>{
   </NavItem>
 
 </Nav>
-
-
-       </div>
-
-
-    )
+  </div>
+)
 }
-
 export default TabBar;

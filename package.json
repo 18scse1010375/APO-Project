@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "tessa-npm-plugin": "tessa-npm-plugin update",
-    "start": "set HTTPS=true&&react-scripts start",
+    "start": "export HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

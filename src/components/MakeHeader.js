@@ -1,7 +1,7 @@
-import { MenuTrigger,Menu,Image,Flex ,Link} from "@adobe/react-spectrum"
+import { MenuTrigger,Menu,Image,Flex} from "@adobe/react-spectrum"
 import React from "react"
 import User from '@spectrum-icons/workflow/User';
-import {Header,Provider,defaultTheme,onAction,ActionButton,ActionMenu,Item,ListBox}from '@adobe/react-spectrum'
+import {Header,Provider,defaultTheme,ActionButton,Item}from '@adobe/react-spectrum'
 import header from './header.css'
 import { logout } from "services/AdobeIms";
 import { useState,useEffect } from "react";
@@ -18,8 +18,7 @@ const MakeHeader=()=>{
 
 
 const logout1 = 'logout';
-
-  const actionOnMenu = (key) => {
+const actionOnMenu = (key) => {
     if(key === logout1) {
       signOut()
     }
@@ -75,13 +74,14 @@ const logout1 = 'logout';
           <User/>
           </ActionButton>
 
-          <Menu    onAction={ (key) => actionOnMenu(key)}  >
+             <Menu    onAction={ (key) => actionOnMenu(key)}  >
           <Item key={logout1} >Logout</Item>
             </Menu>
-
-         
+               
       </MenuTrigger>
-        </Provider>
+
+      
+    </Provider>
 
 </div>
 </div>
