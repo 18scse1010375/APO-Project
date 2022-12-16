@@ -18,7 +18,6 @@ const MakeCard=()=>{
                    
                 </div>
                
-                {/* <CardImg height={91} src="https://cmconsole-dev-va7.stage.cloud.adobe.io/assets/icons/open-document2.svg"></CardImg> */}
                 <CardTitle><h4 style={{paddingLeft:'20px',fontWeight:"lighter",fontSize:"17px",height:'40px',paddingTop:'5px'}}>Email-Suppression</h4></CardTitle>
                 <hr/>
                 
@@ -29,9 +28,7 @@ const MakeCard=()=>{
 
 <Card style={{marginTop:'34px',width:'200px',height:'343px',margin:'25px',display:"inline-block"}}>
 <CardBody style={{marginTop:'8px'}}>
-    {/* <div className="text-center my-1" style={{marginBottom:'5px'}}> */}
     <CardImg className="text-center mx-4 " style={{width:'125px',marginBottom:'15px'}} src="https://spectrum.adobe.com/static/icons/workflow_18/Smock_EmailGear_18_N.svg"></CardImg>
-    {/* </div> */}
     <CardTitle><h4 style={{paddingLeft:'35px',fontWeight:"lighter",fontSize:"17px",paddingBottom:'12px'}}>Bulk-Email-Sent</h4></CardTitle>
     <hr/>
     <CardText className="text-center">Search/View/Create a content from a content source or a content template </CardText>
