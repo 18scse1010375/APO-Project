@@ -9,7 +9,9 @@
     "start": "export HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "fix": "eslint . --fix"
   },
   "url": "https://git.corp.adobe.com/CCP-APO/apo-console",
   "repository": {
@@ -48,6 +50,10 @@
   },
   "devDependencies": {
     "@adobe/tessa-npm-plugin": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.30.0",
+    "eslint-plugin-react": "^7.31.11",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-less": "^4.0.1",

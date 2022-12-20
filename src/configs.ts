@@ -1,4 +1,3 @@
-import { CompletionInfoFlags } from "typescript";
 import { EnvVars } from "./models/envs.model";
 export let env: EnvVars = {
   status: 'error',

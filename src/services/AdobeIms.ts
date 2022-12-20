@@ -1,9 +1,7 @@
 import { AdobeIMS } from '@identity/imslib';
 import { IAdobeIdData } from '@identity/imslib/adobe-id/IAdobeIdData';
 import { IEnvironment } from '@identity/imslib/adobe-id/IEnvironment';
-
 import { userStore } from '../store/UserStore';
-
 
 export const getImsScopes = (): string => {
   return ['AdobeID', 'openid'].filter(Boolean).join(',');
@@ -25,7 +23,7 @@ export const login = () => {
 export const logout = () => {
   try {
     adobeIms.signOut();
-    let profile = null;
+    const profile = null;
     userStore.updateData(profile, 'token');
   } catch (e) {
     console.error('logout', e);
@@ -35,15 +33,12 @@ export const logout = () => {
 export const updateUserProfile = () => {
   adobeIms.getProfile().then(profile => {
     userStore.updateData(profile, adobeIms.getAccessToken().token)
-   
-
-  }).catch( ex => {
+  }).catch(ex => {
     console.error('profile', ex);
   });
 };
-
 const adobeData: IAdobeIdData = {
-  client_id: 'apo-console', // eslint-disable-line
+  client_id: 'apo-console',
   locale: 'en',
   scope: getImsScopes(),
   environment: IEnvironment.STAGE,
@@ -52,8 +47,6 @@ const adobeData: IAdobeIdData = {
   onAccessTokenHasExpired: (): any => ({}),
   onReauthAccessToken: (): any => ({}),
   onReady: login,
-  onError: (): any => ({}), 
+  onError: (): any => ({}),
 };
-
-
 export const adobeIms = new AdobeIMS(adobeData);
