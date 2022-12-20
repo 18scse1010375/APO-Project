@@ -29,7 +29,7 @@ const Login = () => {
       <div id="login-page" className="text-center" >
         <h2 className="apo">APO Console Management Center</h2>
         <p>Welcome to APO Console.You can discover,create and manage communications across email,notification and web</p>
-        <div style={{ width: '10px', marginLeft: '590px' }} >
+        <div id="login-button">
           <Provider theme={defaultTheme}>
             <Button variant="accent" onClick={signIn} > Login </Button>
           </Provider>

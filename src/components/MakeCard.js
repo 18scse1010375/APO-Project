@@ -2,9 +2,9 @@ import React from "react";
 import Email from '@spectrum-icons/workflow/Email';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import MakeCardStyle from "./MakeCardStyle.css"
-
 import { Card, CardBody, CardImg, CardText, CardTitle } from "reactstrap";
 import MakeHeader from "./MakeHeader";
+
 const MakeCard = () => {
     return (
         <div>
