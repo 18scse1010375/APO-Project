@@ -8,6 +8,7 @@ import { logout } from "services/AdobeIms";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { adobeIms } from "services/AdobeIms";
+import { Link } from "react-router-dom"
 
 const MakeHeader = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -48,15 +49,15 @@ const MakeHeader = () => {
               </Flex>
 
               <div className="APO" >
-                <a id="apo-console" href="/home" > APO Console   </a>
+                <Link id="apo-console" to="/home" > APO Console   </Link>
               </div>
 
               <div className="email-suppresion" >
-                <a id="email" href="email-suppresion" > Email Suppression </a>
+                <Link id="email" to="/email-suppresion" > Email Suppression </Link>
               </div>
 
               <div className="bulk-email-sent">
-                <a id="bulk" href="bulk-email-sent" > Bulk Email Sent </a>
+                <Link id="bulk" to="/bulk-email-sent" > Bulk Email Sent </Link>
               </div>
 
               <div className="user-icon">
