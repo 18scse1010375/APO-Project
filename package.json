@@ -11,9 +11,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "fix": "eslint . --fix"
+    "fix": "eslint . --fix" ,
+    "build": "webpack -d && copy src\\index.html dist\\index.html /y && webpack-dev-server --content-base src --inline --port 3000"
+
   },
   "url": "https://git.corp.adobe.com/CCP-APO/apo-console",
+  "devServer": {
+    "historyApiFallback": true
+} , 
   "repository": {
     "type": "git",
     "url": "git@git.corp.adobe.com:CCP-APO/apoconsole.git"
@@ -73,13 +78,17 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
+      "not dead",                              
       "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ] 
+
+   
+
+
   }
 }
