@@ -30,9 +30,10 @@ function App() {
   })
   return (
     <>
+    
     <h1>Welcome to the UI page Arun</h1>
     <h2>This is just the Testing Line for UI Handling</h2>
-    <div>
+    
       <Router>
         <Routes>
           <Route exact path='/home' element={< MakeCard />}></Route>
@@ -44,7 +45,10 @@ function App() {
         </Routes>
       </Router>
 
-    </div>
+
+      <h2>This is Just a Footer Page</h2>
+
+
     </>
   );
 }
