@@ -34,7 +34,7 @@ function App() {
     <h1>Welcome to the UI page Arun</h1>
     <h2>This is just the Testing Line for UI Handling</h2>
     
-      {/* <Router>
+      <Router>
         <Routes>
           <Route exact path='/home' element={< MakeCard />}></Route>
           <Route exact path='/email-suppresion' element={< MakeLabel />}>  </Route>
@@ -43,7 +43,7 @@ function App() {
           <Route exact path='/logout' element={<Login />} >  </Route>
 
         </Routes>
-      </Router> */}
+      </Router>
 
 
       <h2>This is Just a Footer Page</h2>
