@@ -81,6 +81,8 @@ environments:
     cluster_rbac_ldap:
       read:
         - GRP-APO-SERVICES-K8S
+      debug:
+        - GRP-APO-SERVICES-K8S
     rollback_on_failure: true
     containers:
       - id: apoconsole
