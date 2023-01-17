@@ -57,7 +57,7 @@ const MakeHeader = () => {
               </div>
 
               <div className="bulk-email-sent">
-                <Link id="bulk" to="/bulk-email-sent" > Bulk Email Sent </Link>
+                <Link id="bulk" to="/bulk-email-sent" > Bulk Emails </Link>
               </div>
 
               <div className="user-icon">
@@ -86,28 +86,3 @@ const MakeHeader = () => {
 }
 
 export default MakeHeader;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -27,12 +27,10 @@ const Login = () => {
     ) : <>
 
       <div id="login-page" className="text-center" >
-        <h2 className="apo">APO Console Management Center</h2>
-        <p>Welcome to APO Console.You can discover,create and manage communications across email,notification and web</p>
+        <p>Welcome to APO Manager Console</p>
         <div id="login-button">
           <Provider theme={defaultTheme}>
             <Button variant="accent" onClick={signIn} > Login </Button>
-            
           </Provider>
         </div>
       </div>
@@ -40,23 +38,3 @@ const Login = () => {
   )
 }
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
