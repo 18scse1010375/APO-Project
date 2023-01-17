@@ -1,5 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { About } from './components/About';
+import { Error } from './components/Error';
 import MakeHeader from './components/MakeHeader';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import MakeCard from './components/MakeCard';
@@ -29,27 +31,17 @@ function App() {
       .then(async res => setEnv(await res.json()));
   })
   return (
-    <>
-    
-    <h1>Welcome to the UI page Arun</h1>
-    <h2>This is just the Testing Line for UI Handling</h2>
-    
-      <Router>
-        <Routes>
-          <Route exact path='/home' element={< MakeCard />}></Route>
-          <Route exact path='/email-suppresion' element={< MakeLabel />}>  </Route>
-          <Route exact path='/bulk-email-sent' element={< MakeHeader />}>  </Route>
-          <Route exact path='/' element={<Login />} >  </Route>
-          <Route exact path='/logout' element={<Login />} >  </Route>
-
-        </Routes>
-      </Router>
-
-
-      <h2>This is Just a Footer Page</h2>
-
-
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MakeCard />}>
+          <Route index element={<About />} />
+          <Route path="email-suppresion" element={<MakeLabel />} />
+          <Route path="bulk-email-sent" element={<MakeHeader />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<Error />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
