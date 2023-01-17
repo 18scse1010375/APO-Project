@@ -78,6 +78,9 @@ containers:
 environments:
   - name: Dev
     cluster_type: STAGE
+    cluster_rbac_ldap:
+      read:
+        - GRP-APO-SERVICES-K8S
     rollback_on_failure: true
     containers:
       - id: apoconsole
@@ -91,17 +94,13 @@ environments:
         
         scaling:
           min_containers: 1
-          max_containers: 3
+          max_containers: 1
           cpu_low_watermark: 30
           cpu_high_watermark: 70
 
         # By default, Glider creates services that are only accessible via Adobe egress IPs.
         # If you wish to change this behavior, see https://git.corp.adobe.com/adobe-platform/service-spec/blob/f7d7969177b9eddad9b7bc991f4fbbab506b5fd8/spec.yaml#L341-L352
         access_level: corp
-     
+
     regions:
         - name: va6
-
-
-
-
