@@ -78,6 +78,9 @@ containers:
 environments:
   - name: Dev
     cluster_type: STAGE
+    cluster_rbac_ldap:
+      read:
+        - GRP-APO-SERVICES-K8S
     rollback_on_failure: true
     containers:
       - id: apoconsole
