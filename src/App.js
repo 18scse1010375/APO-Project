@@ -6,9 +6,10 @@ import MakeCard from './components/MakeCard';
 import MakeLabel from './components/MakeLabel';
 import Login from './components/Login';
 import { useEffect, useState } from 'react';
-import { userStore } from './store/UserStore';
+
 import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
+import { userStore } from './store/UserStore';
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLogin, setIsLogin] = useState(false);
@@ -31,9 +32,6 @@ function App() {
   return (
     <>
     
-    <h1>Welcome to the UI page Arun</h1>
-    <h2>This is just the Testing Line for UI Handling</h2>
-    
       <Router>
         <Routes>
           <Route exact path='/home' element={< MakeCard />}></Route>
@@ -44,10 +42,6 @@ function App() {
 
         </Routes>
       </Router>
-
-
-      <h2>This is Just a Footer Page</h2>
-
 
     </>
   );

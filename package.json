@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "tessa-npm-plugin": "tessa-npm-plugin update",
-    "start": "export HTTPS=true&&react-scripts start",
+    "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -43,7 +43,7 @@
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "react": "^18.2.0",
-    "react-router-dom": "^6.4.5",
+    "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
     "reactstrap": "^9.1.5",

@@ -1,11 +1,12 @@
-import { React } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
- import App from './App';
-//import Sample from 'Sample';
-import Testing from './components/Testing';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Testing/>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+  
 );
 

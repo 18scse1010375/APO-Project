@@ -4,11 +4,13 @@ export let env: EnvVars = {
   currentEnv: 'dev',
   imsClientId: 'apo-console',
   serviceApiKey: '',
-  serviceHost: 'https://mpcc-cicd.adobe.io',  // to remove test warning
+  serviceHost: '',
   imsEnvironment: 'stg1',
-
+  isProd: false,
+  maxFileSizeMB: ''
 };
 export const setEnv = (data: EnvVars) => {
+  console.log('Got environment variables = ' + data)
   env = {...data};
 };
 

@@ -24,7 +24,7 @@ const MakeCard = () => {
             <Card className="main-card-2">
                 <CardBody className="card-body-2">
                     <CardImg className="text-center mx-4 bulk-image" src="https://spectrum.adobe.com/static/icons/workflow_18/Smock_EmailGear_18_N.svg"></CardImg>
-                    <CardTitle><h4 className="bulk-text"> Bulk-Email-Sent </h4></CardTitle>
+                    <CardTitle><h4 className="bulk-text"> Bulk Emails </h4></CardTitle>
                     <hr />
                     <CardText className="text-center">Search/View/Create a content from a content source or a content template </CardText>
                 </CardBody>

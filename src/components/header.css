@@ -13,7 +13,7 @@
     display: inline-block;
     font-size:15px;
 }
-#apo-console{
+#apo-console {
     display: 'inline-block';
     font-size: 18px;
     margin-left: 70px;
@@ -35,7 +35,7 @@
     color: #747474;
 }
 
-.bulk-email-sent{
+.bulk-email-sent {
     display: inline-block;
     font-size: 18px;
     font-weight: bold;

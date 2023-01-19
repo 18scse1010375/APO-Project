@@ -6,4 +6,6 @@ export interface EnvVars {
   serviceApiKey: string;
   serviceHost: string;
   imsEnvironment: string;
+  isProd: boolean;
+  maxFileSizeMB: string
 }
