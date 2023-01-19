@@ -17,12 +17,9 @@ const MakeHeader = () => {
     logout();
     setIsLogin(true)
   }
-  const signout = 'logout';
-  const actionOnMenu = (key) => {
-    if (key === signout) {
-      signOut()
-    }
-  }
+
+ 
+
   useEffect(() => {
 
     if (!adobeIms.isSignedInUser()) {
@@ -62,18 +59,13 @@ const MakeHeader = () => {
 
               <div className="user-icon">
 
-                <Provider>
-                  <MenuTrigger>
-                    <ActionButton aria-label="Icon only" href="/logout" >
-                      <User />
-                    </ActionButton>
 
-                    <Menu onAction={(key) => actionOnMenu(key)}  >
-                      <Item key={signout} >Logout</Item>
-                    </Menu>
 
-                  </MenuTrigger>
-                </Provider>
+
+
+
+
+
               </div>
             </div>
           </Header>
