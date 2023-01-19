@@ -18,7 +18,7 @@ const MakeHeader = () => {
     setIsLogin(true)
   }
 
- 
+
 
   useEffect(() => {
 
@@ -57,16 +57,16 @@ const MakeHeader = () => {
                 <Link id="bulk" to="/bulk-email-sent" > Bulk Emails </Link>
               </div>
 
-              <div className="user-icon">
+
+            <div className="user-icon">
+             <button onClick={signOut} className="btn btn-primary btn-sm">Logout</button>
 
 
 
 
 
 
-
-
-              </div>
+             </div> 
             </div>
           </Header>
         </Provider>

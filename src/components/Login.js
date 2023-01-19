@@ -27,7 +27,7 @@ const Login = () => {
     ) : <>
 
       <div id="login-page" className="text-center" >
-        <p>Welcome to APO Manager Console</p>
+        <h2>Welcome to APO Manager Console</h2>
         <div id="login-button">
           <Provider theme={defaultTheme}>
             <Button variant="accent" onClick={signIn} > Login </Button>
