@@ -18,6 +18,14 @@ const MakeHeader = () => {
     setIsLogin(true)
   }
 
+  const exit = 'exit';
+  const actionOnMenu = (key) => {
+    if (key === exit) {
+
+      signOut();
+    }
+  }
+
 
 
   useEffect(() => {
@@ -57,16 +65,29 @@ const MakeHeader = () => {
                 <Link id="bulk" to="/bulk-email-sent" > Bulk Emails </Link>
               </div>
 
+              <div className="user-icon">
+                <Provider>
+                  <MenuTrigger>
 
-            <div className="user-icon">
-             <button onClick={signOut} className="btn btn-primary btn-sm">Logout</button>
+                    <ActionButton aria-label="Icon only" href="/logout" >
+                      <User />
+                    </ActionButton>
+
+
+                    <Menu onAction={(key) => actionOnMenu(key)}>
+
+
+                      <Item key="exit">Logout</Item>
+
+                    </Menu>
+                  </MenuTrigger>
 
 
 
 
+                </Provider>
+              </div>
 
-
-             </div> 
             </div>
           </Header>
         </Provider>

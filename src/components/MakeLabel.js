@@ -126,20 +126,29 @@ import { Provider } from "mobx-react";
 
 
 const MakeLabel = () => {
+  
   const [emailError, setEmailError] = useState('')
 
 
   const validateEmail = (e) => {
     var email = e.target.value
     var btn = document.getElementById("submit")
+    var mess=document.getElementById("detail")
+
 
 
     if (validator.isEmail(email)) {
       setEmailError('Valid Email')
-      btn.disabled = ""
+      btn.disabled = "";
+      mess.style.color="green"
+
+
+
     } else {
       setEmailError('Enter valid Email!')
-      btn.disabled = "disabled"
+      btn.disabled = "disabled" 
+      mess.style.color="red"
+      
     }
 
   }
@@ -158,37 +167,49 @@ const MakeLabel = () => {
       }}>
 
 
-        <div className="my-3">
 
+<Container className="mt-4 mx-5" style={{width:'550px'}}>
+
+
+<Label for="exampleEmail">
+      Email
+    </Label>
+    <Input onChange={(e)=>validateEmail(e) }
+      id="exampleEmail"
+      placeholder="Enter Email"
+      type="email"
+    />
+
+    <Container className="text-center mt-4">
+      <button className="btn btn-primary " disabled="disabled" id="submit" >Submit</button>
+    </Container>
+
+  
+
+
+  </Container>
+
+
+
+
+
+
+
+        <br/>
+
+        <span className="my-4"  id="detail" style={{
+          fontWeight: 'bold',
+          marginLeft:'280px' ,
+         
+          color: 'red',
+         
+        }}>{emailError} </span>
+
+
+       
 
           
-              
-                
-              <label htmlFor="email">
-                Enter Email Address
-              </label> <br/>
-              <input onChange={(e) => validateEmail(e)}
-                id="exampleName"
-                placeholder="Enter Email"
-                type="email"
-              />
-              
-             
-              <Container className="text-center">
-                <button id="submit" disabled="disabled" type="submit" className="btn btn-primary my-3">Submit</button>
-              </Container>
-            
 
-
-
-
-
-        </div>
-
-        <span style={{
-          fontWeight: 'bold',
-          color: 'red',
-        }}>{emailError}</span>
 
       </div>
 
