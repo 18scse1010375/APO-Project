@@ -123,39 +123,38 @@ import validator from 'validator'
 import MakeHeader from "./MakeHeader";
 import { Container, Button, Form, TextField, FormGroup, Label, Input } from 'reactstrap';
 import { Provider } from "mobx-react";
+import Info from '@spectrum-icons/workflow/Info';
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
 
 
 const MakeLabel = () => {
-  
+
   const [emailError, setEmailError] = useState('')
 
 
   const validateEmail = (e) => {
     var email = e.target.value
     var btn = document.getElementById("submit")
-    var mess=document.getElementById("detail")
+    var mess = document.getElementById("detail")
 
 
 
     if (validator.isEmail(email)) {
       setEmailError('Valid Email')
       btn.disabled = "";
-      mess.style.color="green"
+      mess.style.color = "green"
 
 
 
     } else {
       setEmailError('Enter valid Email!')
-      btn.disabled = "disabled" 
-      mess.style.color="red"
-      
+      btn.disabled = "disabled"
+      mess.style.color = "red"
+
     }
 
   }
-
-
-
-
 
   return (
     <>
@@ -167,49 +166,54 @@ const MakeLabel = () => {
       }}>
 
 
+        <Container className="mt-4 mx-5" style={{ width: '600px', display: 'inline-block' }}>
 
-<Container className="mt-4 mx-5" style={{width:'550px'}}>
+          <Tooltip title="Please Enter Email to remove from Suppression">
+            <IconButton>
+              <div style={{ width: '28px', display: 'inline-block', color: 'green' }}>
+                <Info />
+              </div>
 
-
-<Label for="exampleEmail">
-      Email
-    </Label>
-    <Input onChange={(e)=>validateEmail(e) }
-      id="exampleEmail"
-      placeholder="Enter Email"
-      type="email"
-    />
-
-    <Container className="text-center mt-4">
-      <button className="btn btn-primary " disabled="disabled" id="submit" >Submit</button>
-    </Container>
-
-  
-
-
-  </Container>
+            </IconButton>
+          </Tooltip>
 
 
 
 
 
+          {/* <div style={{width:'28px',display:'inline-block'}}>
+        <Info/>
+        </div> */}
+          <div className="my-4 mx-1" style={{ display: 'inline-block', width: '450px' }}>
+            <Input onChange={(e) => validateEmail(e)}
+              id="exampleEmail"
+              placeholder="Enter Email"
+              type="email"
 
 
+            />
+          </div>
+
+
+          <Container className="text-center mt-1">
+            <button className="btn btn-primary " disabled="disabled" id="submit" >Submit</button>
+          </Container>
+
+
+
+
+        </Container>
+
+        <br />
         <br/>
 
-        <span className="my-4"  id="detail" style={{
+        <span className="my-4 " id="detail" style={{
           fontWeight: 'bold',
-          marginLeft:'280px' ,
-         
+          marginLeft: '320px',
+
           color: 'red',
-         
+
         }}>{emailError} </span>
-
-
-       
-
-          
-
 
       </div>
 
