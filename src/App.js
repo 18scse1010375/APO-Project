@@ -6,6 +6,7 @@ import MakeCard from './components/MakeCard';
 import MakeLabel from './components/MakeLabel';
 import Login from './components/Login';
 import { useEffect, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
