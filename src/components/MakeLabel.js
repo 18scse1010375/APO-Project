@@ -132,15 +132,6 @@ import base_url from "api-integration/Path";
 import 'react-toastify/dist/ReactToastify.css';
 
 
-// axios.get('/foo')
-//   .catch(function (error) {
-//     if (error.response) {
-//       console.log(error.response.data);
-//       console.log(error.response.status);
-//       console.log(error.response.headers);
-//     }
-//   });
-
 const FetchDataFromServer = () => {
 
   console.log("Your Server is loading")
@@ -154,20 +145,6 @@ const FetchDataFromServer = () => {
       status2.innerHTML = error;
     }
   )
-
-
-  // axios.get(`${base_url}/courses`)
-  // .catch(function (error) {
-  //   if (error.response) {
-  //     console.log(error.response.data);
-  //     console.log("status=",error.response.status);
-  //     console.log(error.response.headers);
-  //   }
-  // });
-
-
-
-
 
 
 
@@ -199,39 +176,24 @@ const GetSpecificCourse = () => {
 }
 
 
+const sendDataToServer = (email) => {
+  const status2=document.getElementById("status1")
+ console.log("Your Send Data To Server function is loading.....")
+ console.log("Email is :" , email)
 
+ var formData = new FormData();
+  formData.append('email' , email )
 
+  axios.post( `${base_url}/sendEmail`, formData    ).then(
 
+    (Response) => { console.log(Response.data); toast.success("Email has been adding to the server...") ; status2.innerHTML=Response.status  },
+    (error) => { console.log(error); toast.error("Something Went Wrong!! ") ; status2.innerHTML=error    }
+  )
+
+}
 
 
 const MakeLabel = () => {
-
-  const f1=(e)=>{
-    e.preventDefault();
-    console.log("submit -f1 is calling")
-  }
- 
-  
-
-  const sendDataToServer = (email) => {
-
-    const status2=document.getElementById("status1")
-
-   
-
-
-    console.log("Your Send Data To Server function is loading.....")
-    const id = Math.floor(Math.random() * 1000)
-    const title = "Just a Email Tester"
-    const course = { id: id, title: "Just a Email Tester", description: email }
-
-    axios.post(`${base_url}/courses`, course).then(
-
-      (Response) => { console.log(Response.data); toast.success("course has been adding to the server...") ; status2.innerHTML=Response.status  },
-      (error) => { console.log(error); toast.error("Something Went Wrong!! ") }
-    )
-
-  }
 
   const [emailError, setEmailError] = useState('')
 
@@ -283,42 +245,44 @@ const MakeLabel = () => {
 
         <Container className="mt-4 mx-5" style={{ width: '600px', display: 'inline-block' }}>
 
+
+         
           <Tooltip title="Please Enter Email to remove from Suppression">
             <IconButton>
-              <div style={{ width: '28px', display: 'inline-block', color: 'green' }}>
+              <div style={{ width: '28px', display: 'inline-block', color: 'green',marginTop:'1px' }}>
                 <Info />
               </div>
 
             </IconButton>
           </Tooltip>
 
-
-
-
-
-          {/* <div style={{width:'28px',display:'inline-block'}}>
-        <Info/>
-        </div> */}
           
-            <div className="my-4 mx-1" style={{ display: 'inline-block', width: '450px' }}>
 
-              <Input onChange={(e) => {setEmail(e.target.value) ; validateEmail(e)  }    }
+
+
+
+
+    
+          
+            <div className="my-4 mx-1" style={{ display: 'inline-block', width: '450px',marginTop:'300px' }}>
+
+              <Input onChange={(e) => setEmail(e.target.value)    }
                 id="exampleEmail"
                 placeholder="Enter Email"
                 type="email"
-                value={email}
+                value={email} />
                 
 
 
-              />
+             
             </div>
 
 
             <Container className="text-center mt-1">
-              <button    type="submit" className="btn btn-primary "  id="submit" disabled="disabled" >Submit</button>
+              <button onClick={()=>sendDataToServer(email)}   type="submit" className="btn btn-primary"  id="submit" >Submit</button>
               <button onClick={FetchDataFromServer} className="btn btn-primary mx-2 " id="fetch" >Fetch Data from Server</button>
-              <button onClick={DeleteDataFromServer} className="btn btn-primary mx-2 " id="delete" >Delete Data from Server</button>
-              <button onClick={GetSpecificCourse} className="btn btn-primary mx-2 my-3 " id="delete" >Get Specific Course</button>
+              <button onClick={DeleteDataFromServer} className="btn btn-danger mx-2 " id="delete" >Delete Data from Server</button>
+              <button onClick={GetSpecificCourse} className="btn btn-info mx-2 my-3 " id="delete" >Get Specific Course</button>
              
               <ToastContainer position="bottom-center" />
             </Container>
