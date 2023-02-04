@@ -1,16 +1,25 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
-import {configure,shallow} from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
-configure({ adapter : new Adapter()   })
-
-import Login from './Login'
-import MakeCard from './MakeCard'
+import { render, screen } from '@testing-library/react';
+// import Demo from './Demo';
+import Extra from './Extra';
+// import MakeHeader from './MakeHeader';
 
 
-describe('Login Page Testing',()=>{
 
-    test("Load Complete HTML of the Component",()=>{ let wrapper=shallow(<MakeCard/>);console.log(wrapper.debug())  }    )
+import '@testing-library/jest-dom';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
 
-}   )
+describe("<Login/>", () => {
+ 
+    test('render the title of an application', () => {
+      render(<Extra/>);
+   
+      const titleEl = screen.getByText(/Welcome to APO Manager Console/);
+      expect(titleEl).toBeInTheDocument();
+     
+    });
 
-
+})

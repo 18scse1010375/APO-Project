@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MakeHeader from './components/MakeHeader';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'

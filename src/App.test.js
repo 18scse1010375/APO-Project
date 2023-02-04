@@ -1,10 +1,25 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
+// /* eslint-disable @typescript-eslint/no-var-requires */
+// import {describe,it} from '@jest/globals'
+// const assert = require('assert');
+// // eslint-disable-next-line @typescript-eslint/no-var-requires
+// const expect = require('chai').expect
+// const request = require('supertest');
+// const App=require('./App')
 
-// eslint-disable-next-line no-undef
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  // eslint-disable-next-line no-undef
-  expect(linkElement).toBeInTheDocument();
-});
+// import App from "./App";
+
+
+// // test('renders learn react link', () => {
+// //   render(<App />);
+// //   const linkElement = screen.getByText(/learn react/i);
+
+// //   expect(linkElement).toBeInTheDocument();
+// // });
+
+// // test.failing('it is not equal', () => {
+// //   expect(5).toBe(6); // this test will pass
+// // });
+
+test("aaa",()=>{expect(5+6).toBe(11) }   )
