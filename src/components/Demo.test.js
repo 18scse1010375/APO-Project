@@ -2,11 +2,12 @@
 /* eslint-disable no-undef */
 import { render, screen } from '@testing-library/react';
 import Demo from './Demo';
+import React from 'react';
 
 import '@testing-library/jest-dom';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-// import MakeHeader from './MakeHeader';
+//  import MakeHeader from './MakeHeader';
 configure({ adapter: new Adapter() });
  
 describe("<Demo/>", () => {

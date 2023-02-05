@@ -21,5 +21,5 @@
 // // test.failing('it is not equal', () => {
 // //   expect(5).toBe(6); // this test will pass
 // // });
-
+import React from 'react';
 test("aaa",()=>{expect(5+6).toBe(11) }   )
