@@ -2,7 +2,7 @@ import { useState } from 'react';
 // import './App.css';
 import React from 'react';
  
-function Demo() {
+const Demo=()=> {
   const [counter, setCounter] = useState(0);
   return (
     <div className="App">

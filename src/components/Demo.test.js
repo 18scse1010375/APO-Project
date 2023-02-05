@@ -7,13 +7,14 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-//  import MakeHeader from './MakeHeader';
+import MakeHeader from './MakeHeader';
+import MakeLabel from './MakeLabel';
 configure({ adapter: new Adapter() });
  
 describe("<Demo/>", () => {
  
   test('render the title of an application', () => {
-    render(<Demo/>);
+    render(<MakeLabel/>);
  
     const titleEl = screen.getByText(/Counter Application/);
     expect(titleEl).toBeInTheDocument();

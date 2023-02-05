@@ -2,26 +2,43 @@
 /* eslint-disable no-undef */
 import { render, screen } from '@testing-library/react';
 // import Demo from './Demo';
-import Extra from './Extra';
-
+import { shallow } from "enzyme";
 import React from 'react';
-// import MakeHeader from './MakeHeader';
-
 
 
 import '@testing-library/jest-dom';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import Login from './Login';
 configure({ adapter: new Adapter() });
 
 describe("<Login/>", () => {
  
     test('render the title of an application', () => {
-      render(<Extra/>);
+      render(<Login/>);
    
       const titleEl = screen.getByText(/Welcome to APO Manager Console/);
       expect(titleEl).toBeInTheDocument();
-     
     });
+
+    test('render buttons', () => {
+        render(<Login/>);
+     
+        const button1 = screen.getByTestId("login");
+
+     
+        expect(button1).toBeInTheDocument();
+        expect(button1.textContent).toEqual(" Login ");
+    
+      });
+
+
+
+
+
+
+
+
+
 
 })
