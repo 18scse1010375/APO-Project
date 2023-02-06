@@ -1,25 +1,34 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
-// /* eslint-disable @typescript-eslint/no-var-requires */
-// import {describe,it} from '@jest/globals'
-// const assert = require('assert');
-// // eslint-disable-next-line @typescript-eslint/no-var-requires
-// const expect = require('chai').expect
-// const request = require('supertest');
-// const App=require('./App')
+import {render, screen} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import React from 'react'
+import '@testing-library/jest-dom'
+import {LocationDisplay} from './app'
+import App from './app'
+import { shallow } from "enzyme";
+import Login from './components/Login'
 
-// import App from "./App";
+import {BrowserRouter, MemoryRouter} from 'react-router-dom'
+
+test("Component is successfully Rendered or not" , ()=>{let wrapper=shallow(<Login/>) ; expect(wrapper).toBeDefined();  }     )
+
+test('full app rendering/navigating', async () => {
+  render(<App/>, {wrapper: BrowserRouter})
+  
 
 
-// // test('renders learn react link', () => {
-// //   render(<App />);
-// //   const linkElement = screen.getByText(/learn react/i);
 
-// //   expect(linkElement).toBeInTheDocument();
-// // });
+  // verify page content for default route
+  expect(screen.getByText(/Welcome to APO Manager Console/i)).toBeInTheDocument()
+  const button1 = screen.getByTestId("login");
+    expect(button1).toBeInTheDocument();
+    expect(button1.textContent).toEqual(" Login ");
+    expect(button1.getAttribute("disabled")).toBe(null) 
+    
 
-// // test.failing('it is not equal', () => {
-// //   expect(5).toBe(6); // this test will pass
-// // });
-import React from 'react';
-test("aaa",()=>{expect(5+6).toBe(11) }   )
+    // await userEvent.click(screen.getByText(/ APO Console/i))
+    // expect(screen.getByText(/APO Console/i)).toBeInTheDocument();
+
+
+
+})

@@ -30,7 +30,7 @@ const Login = () => {
         <h2>Welcome to APO Manager Console</h2>
         <div id="login-button">
           <Provider theme={defaultTheme}>
-            <Button data-testid="login" variant="accent" onClick={signIn} > Login </Button>
+            <Button  data-testid="login" variant="accent" onClick={signIn} > Login </Button>
           </Provider>
         </div>
       </div>

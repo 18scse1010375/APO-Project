@@ -9,12 +9,18 @@ import Extra from 'components/Extra';
 import Geeks from 'components/Geeks';
 import Demo from 'components/Demo';
 import Login from 'components/Login';
+import MakeHeader from './components/MakeHeader';
+import {BrowserRouter as Router} from 'react-router-dom'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    <Router>
+        <App/>
+    </Router>
   
-    <App/>
+   
   
 
 );

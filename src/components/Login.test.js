@@ -29,16 +29,9 @@ describe("<Login/>", () => {
      
         expect(button1).toBeInTheDocument();
         expect(button1.textContent).toEqual(" Login ");
+        expect(button1.getAttribute("disabled")).toBe(null)   //To check login button is enabled or not
     
       });
-
-
-
-
-
-
-
-
 
 
 })

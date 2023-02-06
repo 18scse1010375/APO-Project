@@ -1,7 +1,7 @@
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MakeHeader from './components/MakeHeader';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route,useLocation} from 'react-router-dom'
 import MakeCard from './components/MakeCard';
 import MakeLabel from './components/MakeLabel';
 import Login from './components/Login';
@@ -13,6 +13,24 @@ import Geeks from 'components/Geeks';
 import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
 import { userStore } from './store/UserStore';
+
+
+export const LocationDisplay = () => {
+  const location = useLocation()
+
+  return <div data-testid="location-display">{location.pathname}</div>
+}
+
+
+
+
+
+
+
+
+
+
+
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLogin, setIsLogin] = useState(false);
@@ -35,7 +53,7 @@ function App() {
   return (
     <>
     
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route exact path='/home' element={< MakeCard />}></Route>
           <Route exact path='/email-suppresion' element={< MakeLabel />}>  </Route>
@@ -44,7 +62,9 @@ function App() {
           <Route exact path='/logout' element={<Login />} >  </Route>
 
         </Routes>
-      </Router>
+      {/* </Router> */}
+
+            <LocationDisplay/>
 
     </>
   );

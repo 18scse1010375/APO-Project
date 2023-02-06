@@ -3,18 +3,25 @@
 import { render, screen } from '@testing-library/react';
 import Demo from './Demo';
 import React from 'react';
+import Link from 'react-router-dom'
+
+import { shallow } from "enzyme";
+
 
 import '@testing-library/jest-dom';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import MakeHeader from './MakeHeader';
 import MakeLabel from './MakeLabel';
+import TabBar from './TabBar';
+import MakeCard from './MakeCard';
+import Extra from "./Extra"
 configure({ adapter: new Adapter() });
  
 describe("<Demo/>", () => {
  
   test('render the title of an application', () => {
-    render(<MakeLabel/>);
+    render(<Demo/>);
  
     const titleEl = screen.getByText(/Counter Application/);
     expect(titleEl).toBeInTheDocument();
@@ -26,6 +33,19 @@ describe("<Demo/>", () => {
     const poweredByEl = screen.queryByText(/powered by/i);
     expect(poweredByEl).toBeInTheDocument();
 });
+
+// test('render the Powered By text', () => {
+//         let wrapper=shallow(<Demo/>);
+//     // render( <MakeHeader/> )
+//     expect(wrapper.getByTestId("powered-by")).toBeInTheDocument();
+  
+// });
+
+
+
+
+
+
 
 test('render the Powered By link', () => {
     render(<Demo />);

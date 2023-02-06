@@ -47,14 +47,14 @@ const MakeHeader = () => {
           <Header >
             <div className="header-background">
               <Flex direction="column" height="19px" >
-                <div className="adobe-icon" >
+                <div className="adobe-icon" data-testid="warning-icon" >
                   <Image src="https://spectrum.adobe.com/static/adobe_logo_spectrum_site.svg" alt="Sky and roof" />
                 </div>
 
               </Flex>
 
               <div className="APO" >
-                <Link id="apo-console" to="/home" > APO Console   </Link>
+                <Link data-testid="apo" id="apo-console" to="/home" > APO Console   </Link>
               </div>
 
               <div className="email-suppresion" >
