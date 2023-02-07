@@ -17,6 +17,7 @@ describe("<MakeHeader/>", () => {
     test("Check Components is successfully rendered or not",()=>{let wrapper=shallow(<MakeHeader/>) ; expect(wrapper).toBeDefined() } )
  
     test('Check the Home Components Elements of an application', () => {
+        let wrapper=shallow(<MakeHeader/>) ;
      
       expect(wrapper.contains(  <div className="APO" > <Link id="apo-console" to="/home" >  APO Console  </Link> </div> ) )
       expect(wrapper.contains( <div className="email-suppresion"> <Link id="email" to="/email-suppresion"> Email Suppression </Link> </div>))
@@ -24,12 +25,6 @@ describe("<MakeHeader/>", () => {
      });
 
 
-    // test("Check All the Home Components icons exists" ,()=>{  render( <MakeHeader/>, {wrapper: BrowserRouter}) ; expect(screen.getByTestId("apo") ).toBeInTheDocument()  }    )
-
-
-
-
-
-
+    test("Check All the Home Components icons exists" ,()=>{  render( <App/>, {wrapper: BrowserRouter}) ; expect(screen.getByTestId("apo") ).toBeInTheDocument()  }  )
 
 })

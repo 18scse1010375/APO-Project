@@ -14,7 +14,7 @@ const MakeCard = () => {
                     <div className="text-center mx-4 my-2 email-icon" >
                         <Email />
                     </div>
-                    <CardTitle><h4 className="email-text">Email-Suppression</h4></CardTitle>
+                    <CardTitle> <h4 data-testid="email" className="email-text">Email-Suppression</h4>  </CardTitle>
                     <hr />
 
                     <CardText>Search/View/Create a content from a content source or a content template </CardText>
