@@ -6,6 +6,7 @@ import { Container } from 'reactstrap';
 import MakeHeader from './MakeHeader';
 import { toast, ToastContainer } from 'react-toastify';
 
+
 const BulkEmail = () => {
 
     const [File, setFile] = useState("")
@@ -93,11 +94,11 @@ const BulkEmail = () => {
           
             <div>
 
-                <input type="file" onChange={(event) => onFileChange(event)} />
+                <input data-testid="file-input" type="file" onChange={(event) => onFileChange(event)} />
                 <br/>
 
 
-                <button className='btn btn-primary my-3' onClick={onFileUpload}>
+                <button data-testid="upload" className='btn btn-primary my-3' onClick={onFileUpload}>
                     Upload On Server!
                 </button>
             </div>

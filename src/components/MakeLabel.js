@@ -247,7 +247,7 @@ const MakeLabel = () => {
 
 
          
-          <Tooltip title="Please Enter Email to remove from Suppression">
+          <Tooltip data-testid="tooltip" title="Please Enter Email to remove from Suppression">
             <IconButton>
               <div style={{ width: '28px', display: 'inline-block', color: 'green',marginTop:'1px' }}>
                 <Info />
@@ -268,6 +268,7 @@ const MakeLabel = () => {
 
               <Input onChange={(e) => setEmail(e.target.value)    }
                 id="exampleEmail"
+                data-testid="input-box"
                 placeholder="Enter Email"
                 type="email"
                 value={email} />
@@ -279,7 +280,7 @@ const MakeLabel = () => {
 
 
             <Container className="text-center mt-1">
-              <button onClick={()=>sendDataToServer(email)}   type="submit" className="btn btn-primary"  id="submit" >Submit</button>
+              <button data-testid="submit" onClick={()=>sendDataToServer(email)}   type="submit" className="btn btn-primary"  id="submit" >Submit</button>
               <button onClick={FetchDataFromServer} className="btn btn-primary mx-2 " id="fetch" >Fetch Data from Server</button>
               <button onClick={DeleteDataFromServer} className="btn btn-danger mx-2 " id="delete" >Delete Data from Server</button>
               <button onClick={GetSpecificCourse} className="btn btn-info mx-2 my-3 " id="delete" >Get Specific Course</button>

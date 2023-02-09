@@ -11,17 +11,15 @@ import Demo from 'components/Demo';
 import Login from 'components/Login';
 import MakeHeader from './components/MakeHeader';
 import {BrowserRouter as Router} from 'react-router-dom'
+import MakeCard from './components/MakeCard';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
-        <App/>
-    </Router>
-  
-   
-  
-
+    <App/>
+     </Router>
+    
 );
 

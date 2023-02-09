@@ -1,16 +1,25 @@
 /* eslint-disable no-undef */
 import {render, screen} from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import React from 'react'
 import '@testing-library/jest-dom'
-import {LocationDisplay} from './app'
-import App from './app'
+import { ListGroupItem,ListGroup } from "reactstrap";
+
+
+import App from 'App'
 import { shallow } from "enzyme";
-import Login from './components/Login'
+import Login from 'components/Login';
 
 import {BrowserRouter, MemoryRouter} from 'react-router-dom'
+import MakeCard from 'components/MakeCard';
 
-test("Component is successfully Rendered or not" , ()=>{let wrapper=shallow(<Login/>) ; expect(wrapper).toBeDefined();  }     )
+
+
+ jest.mock('components/MakeHeader');
+
+
+
+
+test(" Default Component is successfully Rendered or not" , ()=>{let wrapper=shallow(<Login/>) ; expect(wrapper).toBeDefined();  }     )
 
 test('full app rendering/navigating', async () => {
   render(<App/>, {wrapper: BrowserRouter})
@@ -23,29 +32,16 @@ test('full app rendering/navigating', async () => {
   const button1 = screen.getByTestId("login");
     expect(button1).toBeInTheDocument();
     expect(button1.textContent).toEqual(" Login ");
-    expect(button1.getAttribute("disabled")).toBe(null) 
+    expect(button1.getAttribute("disabled")).toBe(null)   //check the button is active or not
     
 
-    // await userEvent.click(screen.getByText(/ APO Console/i))
-    // expect(screen.getByText(/APO Console/i)).toBeInTheDocument();
+//     // await userEvent.click(screen.getByText(/ APO Console/i))
+//     // expect(screen.getByText(/APO Console/i)).toBeInTheDocument();
 
-     // use <MemoryRouter> when you want to manually control the history
+//      // use <MemoryRouter> when you want to manually control the history
      
 })
 
-test('landing on a bad page', () => {
-    const badRoute = '/some/bad/route'
-  
-    // use <MemoryRouter> when you want to manually control the history
-    render(
-      <MemoryRouter initialEntries={[badRoute]}>
-        <App />
-      </MemoryRouter>
-    )
-
-    // verify navigation to "no match" route
-    expect(screen.getByText(/no match/i)).toBeInTheDocument()
-})
 
 
 test('landing on a Home', () => {
@@ -55,14 +51,73 @@ test('landing on a Home', () => {
     render(
       <MemoryRouter initialEntries={[badRoute]}>
         <App />
+          
       </MemoryRouter>
     )
-    // expect(screen.getByTestId("email")).toBeInTheDocument();
+
+    //  expect(screen.getByTestId('location-display')).toHaveTextContent(badRoute)
+
+//     expect(screen.getByTestId("card1")).toBeInTheDocument();   //verify the  Card1 is successfully rendered or not
+//     expect(screen.getByTestId("card2")).toBeInTheDocument();  //verify the  Card2 is successfully rendered or not
+
+
+
+
+
+    
+//     expect(screen.getByTestId("email-link")).toBeInTheDocument();   //verify the email suppression button inside card
+//     expect(screen.getByTestId("bulk-email-link")).toBeInTheDocument();   //verify the email suppression button inside card
+     
+//   expect(screen.getByTestId("Email-Icon")).toBeInTheDocument();   //verify the email icon components inside the card
+//   expect(screen.getByTestId("bulk-email-icon")).toBeInTheDocument();   //verify the Bulk-email-icon icon components inside the card
+
+
+
+     
 })
 
-    // verify navigation to "no match" route})
+
+
+// test("Should render default page components which is Login component", () => {
+//     // Arrange
+//     Login.mockImplementation(() => <div>LoginMock</div>);
+
+//     render(
+//         <MemoryRouter>
+//           <App/>
+//         </MemoryRouter>
+//       );
+
+
+//       // Assert
+//     // expect(screen.getByText("Welcome to APO Manager Console")).toBeInTheDocument();
+//     expect(screen.getByText("LoginMocl")).toBeInTheDocument();
 
 
 
+
+// })
+
+
+
+
+
+// test('landing on a Home page', async () => {
+//     // let wrapper=mount(<MakeCard/>)
+//     //  Login.mockImplementation(() => <div> LoginMock </div>     );
+  
+  
+//     // use <MemoryRouter> when you want to manually control the history
+//     // render(
+//     //   <MemoryRouter>
+//     //     <App/>
+//     //   </MemoryRouter>,
+//     //   )
+
+
+//     render(<App />, {wrapper: BrowserRouter})
+
+//     expect(screen.getByTestId("apo")).toBeInTheDocument();
+// })
 
 

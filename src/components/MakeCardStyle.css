@@ -5,18 +5,18 @@
     height:344px ;
 }
 .email-icon{
-    font-size:25px ;
+    font-size:15px ;
     width:125px ;;
 }
 .email-text{
       padding-left:20px ;
-        font-weight: lighter;
-        font-size:17px ;
+        font-weight: bold;
+        font-size:19px ;
         height:40px ;
         padding-top:5px
 }
 .main-card-2{
-    margin-top:34px;
+    margin-top:425px;
     width:200px ;
     height:343px ;
     margin:25px ;
@@ -24,15 +24,20 @@
 }
 .bulk-image{
     width:125px;
-    margin-bottom:15px
+    margin-bottom:5px
 }
 .bulk-text{
-    padding-left:35px ;
+    padding-left:37px ;
     font-weight: lighter ;
     font-size:17px ;
-    padding-bottom: 12px
+    padding-bottom: 16px
 }
 
 .card-body-2{
     margin-top:8px; 
+}
+
+
+#bulk-text{
+    padding-left: 27px;
 }
