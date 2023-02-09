@@ -6,10 +6,10 @@ import '@testing-library/jest-dom'
 import { shallow } from "enzyme";
 
 import {BrowserRouter, MemoryRouter} from 'react-router-dom'
-import MakeLabel from './MakeLabel'
+import MakeLabel from 'components/MakeLabel'
 import App from '../App';
 
-jest.mock('./MakeHeader');
+jest.mock('components/MakeHeader');
 
 describe("Check the functionality of Email Suppression" ,()=>{
     const badRoute = '/email-suppresion'
@@ -48,17 +48,6 @@ describe("Check the functionality of Email Suppression" ,()=>{
 
 
     } )
-
-
-
-
-
-
-
-
-
-
-
 
 
 })

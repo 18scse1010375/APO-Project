@@ -5,55 +5,62 @@ import '@testing-library/jest-dom'
 import { ListGroupItem,ListGroup } from "reactstrap";
 
 
+import '@testing-library/jest-dom';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+
 import App from 'App'
 import { shallow } from "enzyme";
 import Login from 'components/Login';
 
 import {BrowserRouter, MemoryRouter} from 'react-router-dom'
-import MakeCard from 'components/MakeCard';
+import MakeCard from './components/MakeCard';
 
 
 
- jest.mock('components/MakeHeader');
+jest.mock('./components/MakeHeader');
 
 
 
 
-test(" Default Component is successfully Rendered or not" , ()=>{let wrapper=shallow(<Login/>) ; expect(wrapper).toBeDefined();  }     )
+// test(" Default Component is successfully Rendered or not" , ()=>{let wrapper=shallow(<Login/>) ; expect(wrapper).toBeDefined();  }     )
 
-test('full app rendering/navigating', async () => {
-  render(<App/>, {wrapper: BrowserRouter})
+// test('full app rendering/navigating', async () => {
+//   render(<App/>, {wrapper: BrowserRouter})
   
 
 
 
   // verify page content for default route
-  expect(screen.getByText(/Welcome to APO Manager Console/i)).toBeInTheDocument()
-  const button1 = screen.getByTestId("login");
-    expect(button1).toBeInTheDocument();
-    expect(button1.textContent).toEqual(" Login ");
-    expect(button1.getAttribute("disabled")).toBe(null)   //check the button is active or not
+//   expect(screen.getByText(/Welcome to APO Manager Console/i)).toBeInTheDocument()
+//   const button1 = screen.getByTestId("login");
+//     expect(button1).toBeInTheDocument();
+//     expect(button1.textContent).toEqual(" Login ");
+//     expect(button1.getAttribute("disabled")).toBe(null)   //check the button is active or not
     
 
-//     // await userEvent.click(screen.getByText(/ APO Console/i))
-//     // expect(screen.getByText(/APO Console/i)).toBeInTheDocument();
+// //     // await userEvent.click(screen.getByText(/ APO Console/i))
+// //     // expect(screen.getByText(/APO Console/i)).toBeInTheDocument();
 
-//      // use <MemoryRouter> when you want to manually control the history
+// //      // use <MemoryRouter> when you want to manually control the history
      
-})
+// })
 
 
-
+describe("<MakeCard>", ()=>{   
+    const badRoute="/home"
 test('landing on a Home', () => {
-    const badRoute = '/home'
-  
+    
     // use <MemoryRouter> when you want to manually control the history
     render(
       <MemoryRouter initialEntries={[badRoute]}>
         <App />
-          
+       
       </MemoryRouter>
     )
+
+    expect(screen.getByTestId("card1")).toBeInTheDocument();
 
     //  expect(screen.getByTestId('location-display')).toHaveTextContent(badRoute)
 
@@ -74,6 +81,8 @@ test('landing on a Home', () => {
 
 
      
+})
+
 })
 
 

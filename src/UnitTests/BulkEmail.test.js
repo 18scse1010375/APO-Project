@@ -1,8 +1,7 @@
 /* eslint-disable no-undef */
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import Link from 'react-router-dom'
-import {BrowserRouter, MemoryRouter} from 'react-router-dom'
+import {MemoryRouter} from 'react-router-dom'
 
 import { shallow } from "enzyme";
 import App from '../App';
@@ -10,10 +9,10 @@ import App from '../App';
 import '@testing-library/jest-dom';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import BulkEmail from './BulkEmail';
+import BulkEmail from 'components/BulkEmail';
 
 
-jest.mock('./MakeHeader');
+jest.mock('components/MakeHeader');
 
 describe("Check the functionality of Bulk Email" ,()=>{
 

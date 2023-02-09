@@ -13,9 +13,7 @@ import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import MakeHeader from './MakeHeader';
 import MakeLabel from './MakeLabel';
-import TabBar from './TabBar';
 import MakeCard from './MakeCard';
-import Extra from "./Extra"
 configure({ adapter: new Adapter() });
  
 describe("<Demo/>", () => {
