@@ -1,10 +1,12 @@
 /* eslint-disable no-undef */
-import {render, screen} from '@testing-library/react'
+import {fireEvent, render, screen} from '@testing-library/react'
 import React from 'react'
 import '@testing-library/jest-dom'
 import { ListGroupItem,ListGroup } from "reactstrap";
 
 import MakeHeader from 'components/MakeHeader';
+
+import { LocationDisplay } from 'App';
 
 
 import '@testing-library/jest-dom';
@@ -48,7 +50,45 @@ test('landing on a Home', () => {
    
 
 
+    
+
 })
+
+test("check correct ui page is rendered when we clicked on the Navigation Link"  ,()=>{
+
+    render(
+        <MemoryRouter initialEntries={[badRoute]}>
+          <App />
+         
+        </MemoryRouter>
+      )
+
+fireEvent.click(screen.getByTestId("email-link"))
+expect(screen.getByTestId("location-display")).toHaveTextContent("email-suppresion")  //assert for the email-suppression page is rendered or not
+
+
+// render(
+//     <MemoryRouter initialEntries={[badRoute]}>
+//       <App />
+     
+//     </MemoryRouter>
+//   )
+
+
+//  fireEvent.click(screen.getByTestId("bulk-email-link"))
+// expect(screen.getByTestId("location-display")).toHaveTextContent("bulk-email-sent")
+
+
+
+
+}  )
+
+
+
+
+
+
+
 
 })
 
@@ -69,6 +109,8 @@ describe("<MakeHeader/>", () => {
           expect(wrapper.contains( <div className="email-suppresion"> <Link id="email" to="/email-suppresion"> Email Suppression </Link> </div>))   //Verify the Email Suppression  in UI
           expect(wrapper.contains( <div className="bulk-email-sent"> <Link id="bulk" to="/bulk-email-sent" > Bulk Emails </Link> </div>  ))   //verify the Bulk Email Sent in UI
          });
+
+         
 
 
 })
