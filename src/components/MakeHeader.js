@@ -6,9 +6,16 @@ import { Header, Provider, defaultTheme, ActionButton, Item } from '@adobe/react
 import header from './header.css'
 import { logout } from "services/AdobeIms";
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate,useLocation } from "react-router-dom";
 import { adobeIms } from "services/AdobeIms";
 import { Link } from "react-router-dom"
+
+
+export const LocationDisplay = () => {
+  const location = useLocation()
+
+  return <div data-testid="location-display">{location.pathname}</div>
+}
 
 const MakeHeader = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -54,11 +61,11 @@ const MakeHeader = () => {
               </Flex>
 
               <div className="APO" >
-                <Link data-testid="apo" id="apo-console" to="/home" > APO Console   </Link>
+                <Link className="apo1" data-testid="apo" id="apo-console" to="/home" > APO Console   </Link>
               </div>
 
               <div className="email-suppresion" >
-                <Link id="email" to="/email-suppresion" > Email Suppression </Link>
+                <Link className="email1" id="email" to="/email-suppresion" > Email Suppression </Link>
               </div>
 
               <div className="bulk-email-sent">
@@ -91,6 +98,7 @@ const MakeHeader = () => {
             </div>
           </Header>
         </Provider>
+        
       </div>
     </>
   )

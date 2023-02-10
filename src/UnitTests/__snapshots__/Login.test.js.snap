@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login/> Taking Snapshot of Login Component 1`] = `
+<Fragment>
+  <div
+    className="text-center"
+    id="login-page"
+  >
+    <h2>
+      Welcome to APO Manager Console
+    </h2>
+    <div
+      id="login-button"
+    >
+      <ForwardRef($96cabdf5b0aed55b$var$Provider)
+        theme={
+          Object {
+            "dark": Object {
+              "spectrum--darkest": "spectrum--darkest_256eeb",
+            },
+            "global": Object {
+              "spectrum": "spectrum_9e130c",
+              "spectrum--dark": "spectrum--dark_9e130c",
+              "spectrum--darkest": "spectrum--darkest_9e130c",
+              "spectrum--large": "spectrum--large_9e130c",
+              "spectrum--light": "spectrum--light_9e130c",
+              "spectrum--lightest": "spectrum--lightest_9e130c",
+              "spectrum--medium": "spectrum--medium_9e130c",
+            },
+            "large": Object {
+              "spectrum--large": "spectrum--large_c40598",
+            },
+            "light": Object {
+              "spectrum--light": "spectrum--light_a40724",
+            },
+            "medium": Object {
+              "spectrum--medium": "spectrum--medium_4b172c",
+            },
+          }
+        }
+      >
+        <ForwardRef($842a195ed1671b15$var$Button)
+          data-testid="login"
+          onClick={[Function]}
+          variant="accent"
+        >
+           Login 
+        </ForwardRef($842a195ed1671b15$var$Button)>
+      </ForwardRef($96cabdf5b0aed55b$var$Provider)>
+    </div>
+  </div>
+</Fragment>
+`;

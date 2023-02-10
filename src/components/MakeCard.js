@@ -45,7 +45,7 @@ const MakeCard = () => {
                     {/* <CardTitle><h4 className="bulk-text">   <Link data-testid="bulk-email-link" to="/bulk-email-sent">Bulk-Email-Sent</Link>   </h4></CardTitle> */}
                     <CardTitle>
                     <ListGroup>
-                            <Link data-testid="bulk-email-link"    id="bulk-text"  className="list-group-item-action " tag="a" to="/bulk-email-sent"  style={{ textDecoration: 'none' }}>Bulk-Email-Sent </Link>
+                            <Link data-testid="bulk-email-link"    id="bulk-text"  className="list-group-item-action" tag="a" to="/bulk-email-sent"  style={{ textDecoration: 'none' }}>Bulk-Email-Sent </Link>
 
                         </ListGroup>
                         </CardTitle>

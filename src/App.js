@@ -52,12 +52,13 @@ function App() {
   })
   return (
     <>
-      {/* <MakeHeader/> */}
+     
     
       {/* <Router> */}
         <Routes>
           <Route exact path='/home' element={< MakeCard />}></Route>
           <Route exact path='/email-suppresion' element={< MakeLabel />}>  </Route>
+          <Route exact path='/header' element={< MakeHeader />}>  </Route>
           <Route exact path='/bulk-email-sent' element={< BulkEmail />}>  </Route>
           <Route exact path='/' element={<Login/>} >  </Route>
           <Route exact path='/logout' element={<Login />} >  </Route> 

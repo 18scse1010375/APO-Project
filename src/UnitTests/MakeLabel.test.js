@@ -3,11 +3,12 @@ import {render, screen} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
 import React from 'react'
 import '@testing-library/jest-dom'
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 
 import {BrowserRouter, MemoryRouter} from 'react-router-dom'
 import MakeLabel from 'components/MakeLabel'
 import App from '../App';
+import { wrap } from 'module';
 
 jest.mock('components/MakeHeader');
 
@@ -48,6 +49,21 @@ describe("Check the functionality of Email Suppression" ,()=>{
 
 
     } )
+
+
+    test("Backend function is calling" ,async()=>{
+
+         const wrapper=shallow(<MakeLabel/>)
+         console.log(wrapper.debug())
+         const instance1=wrapper.instance()
+         console.log(instance1)
+        // wrapper.find("submit").simulate('click')
+        // jest.spyOn(instance1,sendDatatoServer);
+
+
+
+
+    }  )
 
 
 })

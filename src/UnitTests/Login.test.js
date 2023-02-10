@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 // import Demo from './Demo';
 import { shallow } from "enzyme";
 import React from 'react';
+import renderer from 'react-test-renderer';
 
 
 import '@testing-library/jest-dom';
@@ -34,5 +35,15 @@ describe("<Login/>", () => {
     
       });
 
+
+      test("Taking Snapshot of Login Component", ()=>{
+        const wrapper=shallow( <Login/> )
+        expect(wrapper).toMatchSnapshot();
+        
+        
+
+
+
+      } )
 
 })

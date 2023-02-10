@@ -8,12 +8,14 @@ import MakeHeader from './components/MakeHeader';
 import {BrowserRouter as Router} from 'react-router-dom'
 import MakeCard from './components/MakeCard';
 
+import { Demo5 } from 'components/Demo5';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
-    <App/>
+    <Demo5/>
      </Router>
     
 );

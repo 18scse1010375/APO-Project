@@ -132,25 +132,7 @@ import base_url from "api-integration/Path";
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const FetchDataFromServer = () => {
 
-  console.log("Your Server is loading")
-  let status2 = document.getElementById("status1");
-  axios.get(`${base_url}/courses`).then(
-
-    (Response) => { console.log(Response.status); status2.innerHTML = Response.status; console.log(Response.data); Response.status == 200 ? toast.success("courses are Loading....") : toast.error("ohh...") },
-    (error) => {
-      toast.error("Something Went Wrong!!");
-      console.log(error.status);
-      status2.innerHTML = error;
-    }
-  )
-
-
-
-
-
-}
 
 const DeleteDataFromServer = () => {
   let status2 = document.getElementById("status1");
@@ -194,6 +176,26 @@ const sendDataToServer = (email) => {
 
 
 const MakeLabel = () => {
+
+  const FetchDataFromServer = () => {
+
+    console.log("Your Server is loading")
+    let status2 = document.getElementById("status1");
+    axios.get(`${base_url}/courses`).then(
+  
+      (Response) => { console.log(Response.status); status2.innerHTML = Response.status; console.log(Response.data); Response.status == 200 ? toast.success("courses are Loading....") : toast.error("ohh...") },
+      (error) => {
+        toast.error("Something Went Wrong!!");
+        console.log(error.status);
+        status2.innerHTML = error;
+      }
+    )
+  
+  
+  
+  
+  
+  }
 
   const [emailError, setEmailError] = useState('')
 
