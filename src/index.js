@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import App from './App';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,13 +9,27 @@ import MakeCard from './components/MakeCard';
 
 import { Demo5 } from 'components/Demo5';
 
+import { createRoot } from 'react-dom/client';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <Router>
-    <Demo5/>
-     </Router>
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//     <Router>
+//     <App/>
+//      </Router>
     
-);
+// );
+
+// import { createRoot } from 'react-dom/client';
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+// root.render(<App tab="home" />);
+
+root.render(
+        <Router>
+        <App/>
+         </Router>
+        
+    );
 

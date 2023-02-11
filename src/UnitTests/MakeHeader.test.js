@@ -13,21 +13,39 @@ import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import MakeHeader from 'components/MakeHeader';
 
+import { useEffect } from 'react';
+
+// jest.mock("react")
+
 
 
 
 test("<MakeHeader>" ,()=>{
+   const badRoute="/home"
+
+
+   const {debug}=  render(
+       <MemoryRouter initialEntries={[badRoute]}>
+          <App />
+            
+        </MemoryRouter>
+      )
+
+       debug();
+    //    useEffect.mockReturnValue(  {setIsLogin(true)}     )
+    // expect(screen.getByTestId("apo1")).toBeInTheDocument();
+
    
 
     
 
 
     
-    const wrapper=shallow(<MakeHeader/>)
-    console.log(wrapper.debug())
-     wrapper.find(".apo1").simulate('click')
+    // const wrapper=shallow(<MakeHeader/>)
+    // console.log(wrapper.debug())
+    //  wrapper.find(".apo1").simulate('click')
 
-     expect(wrapper.find("location-display").first().text()).toEqual("/home")
+    //  expect(wrapper.find("location-display").first().text()).toEqual("/home")
     
     // wrapper.find(".email1").simulate('click')
 

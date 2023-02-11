@@ -64,6 +64,7 @@
     "chai": "^4.3.7",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.7",
+    "enzyme-adapter-react-17-updated": "^1.0.2",
     "enzyme-to-json": "^3.6.2",
     "eslint": "^8.30.0",
     "eslint-plugin-react": "^7.31.11",
@@ -78,8 +79,11 @@
     "mocha": "^10.2.0",
     "supertest": "^6.3.3"
   },
-  "jest" : {"snapshotSerializers" : ["enzyme-to-json/serializer"] } , 
-
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -8,7 +8,7 @@ export const Demo5 = () => {
     const [count,setCount]=useState(0);
    
 
-    function increase(){
+    const increase=()=>{
          setCount(count+1)
          return 5
     }
@@ -30,7 +30,7 @@ export const Demo5 = () => {
         
         <button onClick={decrease} type='button' id="button" className='btn btn-primary' >Decrement</button>
 
-
+       <increase/>
 
     </div>
   )
