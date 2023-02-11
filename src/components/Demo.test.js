@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
-import { render, screen } from '@testing-library/react';
+import {render,screen} from '@testing-library/react'
 import Demo from './Demo';
 import React from 'react';
 import Link from 'react-router-dom'
@@ -14,7 +14,11 @@ import Adapter from 'enzyme-adapter-react-16';
 import MakeHeader from './MakeHeader';
 import MakeLabel from './MakeLabel';
 import MakeCard from './MakeCard';
+import { createRoot } from 'react-dom/client';
+
 configure({ adapter: new Adapter() });
+
+
  
 describe("<Demo/>", () => {
  

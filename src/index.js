@@ -12,7 +12,6 @@ import { Demo5 } from 'components/Demo5';
 import { createRoot } from 'react-dom/client';
 
 
-
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
 //     <Router>
@@ -21,10 +20,8 @@ import { createRoot } from 'react-dom/client';
     
 // );
 
-// import { createRoot } from 'react-dom/client';
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-// root.render(<App tab="home" />);
 
 root.render(
         <Router>
