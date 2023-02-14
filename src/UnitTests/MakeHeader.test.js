@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import {fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import {MemoryRouter,useLocation} from 'react-router-dom'
+import {MemoryRouter} from 'react-router-dom'
 
 import { shallow } from "enzyme";
 import App from '../App';
@@ -32,7 +32,7 @@ test("<MakeHeader>" ,()=>{
       )
 
        debug();
-    //    useEffect.mockReturnValue(  {setIsLogin(true)}     )
+       
     // expect(screen.getByTestId("apo1")).toBeInTheDocument();
 
    

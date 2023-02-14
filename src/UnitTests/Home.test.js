@@ -4,7 +4,9 @@ import React from 'react'
 import '@testing-library/jest-dom'
 import { ListGroupItem,ListGroup } from "reactstrap";
 
-import MakeHeader from 'components/MakeHeader';
+// import MakeHeader from 'components/MakeHeader';
+import MakeHeader from  'C:\\Users\\asnghal\\apo-console\\src\\components\\MakeHeader.js'
+
 
 import { LocationDisplay } from 'App';
 
@@ -18,11 +20,12 @@ import App from 'App'
 import { shallow } from "enzyme";
 import Login from 'components/Login';
 
+
 import {BrowserRouter, MemoryRouter} from 'react-router-dom'
 import MakeCard from 'components/MakeCard';
 import { Link } from 'react-router-dom';
 
-jest.mock('components/MakeHeader');
+ jest.mock('components/MakeHeader');
 
 
 describe("<MakeCard>", ()=>{   

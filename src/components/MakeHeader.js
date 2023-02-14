@@ -6,16 +6,16 @@ import { Header, Provider, defaultTheme, ActionButton, Item } from '@adobe/react
 import header from './header.css'
 import { logout } from "services/AdobeIms";
 import { useState, useEffect } from "react";
-import { Navigate,useLocation } from "react-router-dom";
+import { Navigate} from "react-router-dom";
 import { adobeIms } from "services/AdobeIms";
 import { Link } from "react-router-dom"
 
 
-export const LocationDisplay = () => {
-  const location = useLocation()
+// export const LocationDisplay = () => {
+//   const location = useLocation()
 
-  return <div data-testid="location-display">{location.pathname}</div>
-}
+//   return <div data-testid="location-display">{location.pathname}</div>
+// }
 
 const MakeHeader = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -38,7 +38,7 @@ const MakeHeader = () => {
   useEffect(() => {
 
     if (!adobeIms.isSignedInUser()) {
-      setIsLogin(true)
+      setIsLogin(false)
     }
 
   }, []);

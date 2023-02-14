@@ -49,7 +49,7 @@ const BulkEmail = () => {
         }
         else {
             toast.warning("Please Upload Excel File First")
-            document.getElementById("respond1").innerHTML="Please upload  Excel file first!!!"
+             document.getElementById("respond1").innerHTML="Please upload  Excel file first!!!"
         }
 
     };
@@ -106,7 +106,8 @@ const BulkEmail = () => {
            
            <Container className='my-3 text-warning' style={{textColor:'white'}}>
             <ToastContainer position='bottom-center'/>
-                <p>  <span  id="respond1"></span>   </p>
+                {/* <p>  <span  id="respond1"></span>   </p> */}
+                <p id='respond1'></p>
                 </Container>
 
   

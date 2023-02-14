@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
-import {render, screen} from '@testing-library/react'
-import {userEvent} from '@testing-library/user-event'
+import {render, screen,fireEvent} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
 import React from 'react'
 import '@testing-library/jest-dom'
 import { mount, shallow } from "enzyme";
@@ -35,10 +36,16 @@ describe("Check the functionality of Email Suppression" ,()=>{
                 
             </MemoryRouter>
           )
+      
         
+          fireEvent.mouseOver(screen.getByTestId("tooltip"));   //verification for the Tooltip title  in UI
+          expect(
+            screen.findByText("Please Enter Email to remove from Suppression")
+          )
         
-        
-        expect(screen.getByTestId("input-box")).toBeInTheDocument()     //verification for the input box
+        expect(screen.getByTestId("email-input")).toBeInTheDocument()   //verification for the input box
+          
+        expect(screen.getByTestId("email-input")).toHaveAttribute('type', 'email')
         expect(screen.getByTestId("tooltip")).toBeInTheDocument()     //verification for the ToolTip box
         expect(screen.getByTestId("submit")).toBeInTheDocument() //Verification for the Submit Button
         expect(screen.getByTestId("submit").textContent).toEqual("Submit")   //Check the text content of Button
@@ -51,19 +58,26 @@ describe("Check the functionality of Email Suppression" ,()=>{
     } )
 
 
-    test("Backend function is calling" ,async()=>{
+    test("Backend function is calling" , ()=>{
+      const badRoute="/email-suppresion"
 
-         const wrapper=shallow(<MakeLabel/>)
-         console.log(wrapper.debug())
-         const instance1=wrapper.instance()
-         console.log(instance1)
-        // wrapper.find("submit").simulate('click')
-        // jest.spyOn(instance1,sendDatatoServer);
+      const {debug}=render(
+        <MemoryRouter initialEntries={[badRoute]}>
+          <App />
+        </MemoryRouter>
+      )
+
+      debug();
+
+    const inputEl = screen.getByTestId("email-input");
+    console.log(inputEl)
+     userEvent.type(inputEl, "test@mail.com");
+    console.log("Value are:" , document.getElementById("email-box").value)
+ 
+    expect(screen.getByTestId("email-input")).toHaveValue("test@mail.com");
+  });
 
 
 
 
-    }  )
-
-
-})
+  })
