@@ -59,7 +59,10 @@ describe("Check the functionality of Email Suppression" ,()=>{
 
 
     test("Backend function is calling" , ()=>{
+      const sendDataToServerSpy = jest.fn();
       const badRoute="/email-suppresion"
+
+  
 
       const {debug}=render(
         <MemoryRouter initialEntries={[badRoute]}>
@@ -68,14 +71,24 @@ describe("Check the functionality of Email Suppression" ,()=>{
       )
 
       debug();
-
     const inputEl = screen.getByTestId("email-input");
-    console.log(inputEl)
      userEvent.type(inputEl, "test@mail.com");
     console.log("Value are:" , document.getElementById("email-box").value)
  
-    expect(screen.getByTestId("email-input")).toHaveValue("test@mail.com");
-  });
+    expect(screen.getByTestId("email-input")).toHaveValue("test@mail.com");  //check that i am able to pass the value in input box
+
+    const btn=screen.getByTestId("submit")
+
+
+    fireEvent.click(btn); //verification for the click event
+
+    expect(screen.getByTestId("status"))
+
+  //  expect(screen.getByTestId("200")).toBeInTheDocument();
+    // expect(screen.getByTestId('status')).toHaveTextContent('200');
+
+
+      })
 
 
 

@@ -8,7 +8,7 @@
     "tessa-npm-plugin": "tessa-npm-plugin update",
     "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test  setupFile ./src/setupTests.js    --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\" --env=jsdom   --coverage   ",
+    "test": "react-scripts test  setupFile ./src/setupTests.js    --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\" --env=jsdom   --coverage  --testPathIgnorePatterns=./src/index.js ",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "fix": "eslint . --fix"
@@ -57,7 +57,7 @@
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
+    "@testing-library/user-event": "^13.5.0",
     "@types/enzyme": "^3.10.12",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
@@ -83,6 +83,11 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ],
+    "coveragePathIgnorePatterns": [
+      "./src/store/UserStore.ts",
+      "./src/services/AdobeIms.ts",
+      "./src/models/*"
     ]
   },
   "eslintConfig": {

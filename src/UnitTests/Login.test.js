@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
-import { render, screen } from '@testing-library/react';
+import { render, screen , fireEvent } from '@testing-library/react';
 // import Demo from './Demo';
 import { shallow } from "enzyme";
 import React from 'react';
-import renderer from 'react-test-renderer';
 
 
 import '@testing-library/jest-dom';
@@ -31,7 +30,13 @@ describe("<Login/>", () => {
      
         expect(button1).toBeInTheDocument();
         expect(button1.textContent).toEqual(" Login ");
-        expect(button1.getAttribute("disabled")).toBe(null)   //To check login button is enabled or not
+        expect(button1.getAttribute("disabled")).toBe(null)    //To check login button is enabled or not
+ 
+        fireEvent.click(button1)  //verification to check that login button is clcikable or not
+
+
+        
+       
     
       });
 

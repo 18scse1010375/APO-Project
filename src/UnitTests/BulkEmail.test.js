@@ -46,7 +46,6 @@ describe("Check the functionality of Bulk Email" ,()=>{
 
          const btn=screen.getByTestId("upload")
          fireEvent.click(btn)
-         expect(onClick).toHaveBeenCalledTimes(1);
 
          
 

@@ -7,7 +7,6 @@ import MakeHeader from './components/MakeHeader';
 import {BrowserRouter as Router} from 'react-router-dom'
 import MakeCard from './components/MakeCard';
 
-import { Demo5 } from 'components/Demo5';
 
 import { createRoot } from 'react-dom/client';
 import ReactDOM from "react-dom/client";

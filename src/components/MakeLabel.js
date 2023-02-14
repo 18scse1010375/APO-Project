@@ -268,29 +268,17 @@ const MakeLabel = () => {
 
           <div className="my-4 mx-1" style={{ display: 'inline-block', width: '450px', marginTop: '300px' }}>
 
-            {/* <Input 
-                id="exampleEmail"
-                data-testid="input-box"
+            <Input 
+                data-testid="email-input"
                 placeholder="Enter Email"
                 type="email"
-                 /> */}
+                value={email}
+                 onChange={e => setEmail(e.target.value)}
+                 id="email-box"
 
-            <input
-              type="email"
-              placeholder="Enter email"
-              data-testid="email-input"
-              id="email-box"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
+                 />
 
-           
-
-
-
-
-
-
+          
 
 
           </div>
@@ -326,7 +314,7 @@ const MakeLabel = () => {
         }}>{emailError} </span>
 
 
-        <h4> HTTP Status:<span className="my-4 " id="status1" style={{
+        <h4 > HTTP Status:<span data-testid="status" className="my-4 " id="status1" style={{
           fontWeight: 'bold',
 
 

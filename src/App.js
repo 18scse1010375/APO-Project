@@ -7,7 +7,6 @@ import Login from './components/Login';
 import { useEffect, useState } from 'react';
 import BulkEmail from './components/BulkEmail';
 import 'react-toastify/dist/ReactToastify.css';
-import { NoMatch } from './components/NoMatch';
 
 import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
@@ -58,11 +57,9 @@ function App() {
         <Routes>
           <Route exact path='/home' element={< MakeCard />}></Route>
           <Route exact path='/email-suppresion' element={< MakeLabel />}>  </Route>
-          <Route exact path='/header' element={< MakeHeader />}>  </Route>
           <Route exact path='/bulk-email-sent' element={< BulkEmail />}>  </Route>
           <Route exact path='/' element={<Login/>} >  </Route>
           <Route exact path='/logout' element={<Login />} >  </Route> 
-          <Route path="*" element={<NoMatch />} />
 
         </Routes>
       {/* </Router> */}
