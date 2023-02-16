@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.28% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/14</span>
+                <span class='fraction'>7/14</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">16.66% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">20% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/5</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">64.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/14</span>
+                <span class='fraction'>7/14</span>
             </div>
         
             
@@ -191,33 +191,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -318,17 +318,17 @@ const MakeHeader = () =&gt; {
 &nbsp;
 &nbsp;
 &nbsp;
-  useEffect(() =&gt; {
+  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
 &nbsp;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (!adobeIms.isSignedInUser()) {
-      setIsLogin(false)
+<span class="cstat-no" title="statement not covered" >    if (!adobeIms.isSignedInUser()) {</span>
+<span class="cstat-no" title="statement not covered" >      setIsLogin(false)</span>
     }
 &nbsp;
   }, []);
 &nbsp;
   return (
     !isLogin ? (
-      &lt;Navigate to="/" replace={true} /&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >      &lt;Navigate to="/" replace={true} /&gt;</span>
     ) : &lt;&gt;
 &nbsp;
       &lt;div&gt;
@@ -344,7 +344,7 @@ const MakeHeader = () =&gt; {
               &lt;/Flex&gt;
 &nbsp;
               &lt;div className="APO" &gt;
-                &lt;Link className="apo1" data-testid="apo" id="apo-console" to="/home" &gt; APO Console   &lt;/Link&gt;
+                &lt;Link className="apo1"  id="apo-console" to="/home" &gt; APO Console   &lt;/Link&gt;
               &lt;/div&gt;
 &nbsp;
               &lt;div className="email-suppresion" &gt;
@@ -352,7 +352,7 @@ const MakeHeader = () =&gt; {
               &lt;/div&gt;
 &nbsp;
               &lt;div className="bulk-email-sent"&gt;
-                &lt;Link id="bulk" to="/bulk-email-sent" &gt; Bulk Emails &lt;/Link&gt;
+                &lt;Link  id="bulk" to="/bulk-email-sent" &gt; Bulk Emails &lt;/Link&gt;
               &lt;/div&gt;
 &nbsp;
               &lt;div className="user-icon"&gt;
@@ -397,7 +397,7 @@ export default MakeHeader;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-14T18:17:46.839Z
+                at 2023-02-16T14:31:56.272Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

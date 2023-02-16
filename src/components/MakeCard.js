@@ -25,7 +25,7 @@ const MakeCard = () => {
 
 
                         <ListGroup>
-                            <Link data-testid="email-link" className="list-group-item-action " tag="a" to="/email-suppresion"  style={{ textDecoration: 'none' }}>Email-Suppression </Link>
+                            <Link id="email-link" data-testid="email-link" className="list-group-item-action " tag="a" to="/email-suppresion"  style={{ textDecoration: 'none' }}>Email-Suppression </Link>
 
                         </ListGroup>
 

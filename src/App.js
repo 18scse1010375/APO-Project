@@ -1,6 +1,6 @@
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route,useLocation} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route,useLocation,useParams} from 'react-router-dom'
 import MakeCard from './components/MakeCard';
 import MakeLabel from './components/MakeLabel';
 import Login from './components/Login';
@@ -12,13 +12,10 @@ import { setEnv } from 'configs';
 import { adobeIms } from './services/AdobeIms';
 import { userStore } from './store/UserStore';
 import MakeHeader from 'components/MakeHeader';
+ import { Child , LocationDisplay } from 'components/UrlPath';
 
 
-export const LocationDisplay = () => {
-  const location = useLocation()
 
-  return <div data-testid="location-display">{location.pathname}</div>
-}
 
 
 
@@ -31,6 +28,9 @@ export const LocationDisplay = () => {
 
 
 function App() {
+
+   
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
@@ -55,16 +55,27 @@ function App() {
     
       {/* <Router> */}
         <Routes>
-          <Route exact path='/home' element={< MakeCard />}></Route>
+          <Route exact path='/home' element={  < MakeCard />     }>       </Route>
           <Route exact path='/email-suppresion' element={< MakeLabel />}>  </Route>
           <Route exact path='/bulk-email-sent' element={< BulkEmail />}>  </Route>
           <Route exact path='/' element={<Login/>} >  </Route>
           <Route exact path='/logout' element={<Login />} >  </Route> 
 
+          {/* <Route exact path="/:id"  element={<Child />} /> */}
+          {/* <Route path="/:id" element={<Child />} /> */}
+
         </Routes>
       {/* </Router> */}
 
+     
+
             <LocationDisplay/>
+          
+
+      
+
+
+
 
     </>
   );

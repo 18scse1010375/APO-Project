@@ -134,28 +134,28 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const DeleteDataFromServer = () => {
-  let status2 = document.getElementById("status1");
-  console.log("Delete function is calling")
-  const id = prompt("Enter id that you want to delete")
-  axios.delete(`${base_url}/courses/${id}`).then(
-    (Response) => { console.log("Deletion Successful"); toast.success("Course has been Deleted!!"); status2.innerHTML = Response.status },
-    (error) => { console.log(error); toast.error("Something Went Wrong!!"); status2.innerHTML = error }
-  )
+// const DeleteDataFromServer = () => {
+//   let status2 = document.getElementById("status1");
+//   console.log("Delete function is calling")
+//   const id = prompt("Enter id that you want to delete")
+//   axios.delete(`${base_url}/courses/${id}`).then(
+//     (Response) => { console.log("Deletion Successful"); toast.success("Course has been Deleted!!"); status2.innerHTML = Response.status },
+//     (error) => { console.log(error); toast.error("Something Went Wrong!!"); status2.innerHTML = error }
+//   )
 
-}
+// }
 
-const GetSpecificCourse = () => {
-  let status2 = document.getElementById("status1");
-  console.log("Your Specific Function is calling...")
-  const id = prompt("Enter Course id that you want to access")
-  axios.get(`${base_url}/courses/${id}`).then(
-    (Response) => { console.log("Your Specific Course:", Response.data); toast.success("Your Specific Course is loading.."); status2.innerHTML = Response.status },
-    (error) => { console.log(error); toast.error("Something went wrong!!!"); status2.innerHTML = error }
+// const GetSpecificCourse = () => {
+//   let status2 = document.getElementById("status1");
+//   console.log("Your Specific Function is calling...")
+//   const id = prompt("Enter Course id that you want to access")
+//   axios.get(`${base_url}/courses/${id}`).then(
+//     (Response) => { console.log("Your Specific Course:", Response.data); toast.success("Your Specific Course is loading.."); status2.innerHTML = Response.status },
+//     (error) => { console.log(error); toast.error("Something went wrong!!!"); status2.innerHTML = error }
 
 
-  )
-}
+//   )
+// }
 
 
 const sendDataToServer = (email) => {
@@ -177,25 +177,25 @@ const sendDataToServer = (email) => {
 
 const MakeLabel = () => {
 
-  const FetchDataFromServer = () => {
+  // const FetchDataFromServer = () => {
 
-    console.log("Your Server is loading")
-    let status2 = document.getElementById("status1");
-    axios.get(`${base_url}/courses`).then(
+  //   console.log("Your Server is loading")
+  //   let status2 = document.getElementById("status1");
+  //   axios.get(`${base_url}/courses`).then(
 
-      (Response) => { console.log(Response.status); status2.innerHTML = Response.status; console.log(Response.data); Response.status == 200 ? toast.success("courses are Loading....") : toast.error("ohh...") },
-      (error) => {
-        toast.error("Something Went Wrong!!");
-        console.log(error.status);
-        status2.innerHTML = error;
-      }
-    )
-
-
+  //     (Response) => { console.log(Response.status); status2.innerHTML = Response.status; console.log(Response.data); Response.status == 200 ? toast.success("courses are Loading....") : toast.error("ohh...") },
+  //     (error) => {
+  //       toast.error("Something Went Wrong!!");
+  //       console.log(error.status);
+  //       status2.innerHTML = error;
+  //     }
+  //   )
 
 
 
-  }
+
+
+  // }
 
   const [emailError, setEmailError] = useState('')
 
@@ -286,9 +286,9 @@ const MakeLabel = () => {
 
           <Container className="text-center mt-1">
             <button data-testid="submit" onClick={() => sendDataToServer(email)} type="submit" className="btn btn-primary" id="submit" >Submit</button>
-            <button onClick={FetchDataFromServer} className="btn btn-primary mx-2 " id="fetch" >Fetch Data from Server</button>
-            <button onClick={DeleteDataFromServer} className="btn btn-danger mx-2 " id="delete" >Delete Data from Server</button>
-            <button onClick={GetSpecificCourse} className="btn btn-info mx-2 my-3 " id="delete" >Get Specific Course</button>
+            {/* <button onClick={FetchDataFromServer} className="btn btn-primary mx-2 " id="fetch" >Fetch Data from Server</button> */}
+            {/* <button onClick={DeleteDataFromServer} className="btn btn-danger mx-2 " id="delete" >Delete Data from Server</button>
+            <button onClick={GetSpecificCourse} className="btn btn-info mx-2 my-3 " id="delete" >Get Specific Course</button> */}
 
             <ToastContainer position="bottom-center" />
           </Container>

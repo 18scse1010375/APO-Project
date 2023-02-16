@@ -61,7 +61,7 @@ const MakeHeader = () => {
               </Flex>
 
               <div className="APO" >
-                <Link className="apo1" data-testid="apo" id="apo-console" to="/home" > APO Console   </Link>
+                <Link className="apo1"  id="apo-console" to="/home" > APO Console   </Link>
               </div>
 
               <div className="email-suppresion" >
@@ -69,7 +69,7 @@ const MakeHeader = () => {
               </div>
 
               <div className="bulk-email-sent">
-                <Link id="bulk" to="/bulk-email-sent" > Bulk Emails </Link>
+                <Link  id="bulk" to="/bulk-email-sent" > Bulk Emails </Link>
               </div>
 
               <div className="user-icon">
