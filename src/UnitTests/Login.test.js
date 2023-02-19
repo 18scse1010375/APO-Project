@@ -23,6 +23,7 @@ configure({ adapter: new Adapter() });
 
 
 describe("<Login/>", () => {
+  let component
 
     // test("check the default component url path" , ()=>{
     //   const history = createMemoryHistory();
@@ -36,6 +37,18 @@ describe("<Login/>", () => {
 
 
     // }  )
+
+    // beforeEach(() => {
+    //    component = shallow(< Login/>)
+    // })
+  
+    // test('is initially active: false', () => {
+    //   component.state('isLogin').should.be.false
+    //   // component.find('div.fade-in').prop('className').should.equal('fade-in')
+    // })
+
+
+
 
 
 

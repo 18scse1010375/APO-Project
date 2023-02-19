@@ -1,6 +1,10 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-undef */
 import {render, screen,fireEvent} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import axios from 'axios';
+
+import { renderHook,act } from '@testing-library/react';
 
 import React from 'react'
 import '@testing-library/jest-dom'
@@ -12,6 +16,9 @@ import App from '../App';
 import { wrap } from 'module';
 
 jest.mock('components/MakeHeader');
+jest.spyOn(console, "error").mockImplementation(() => {});
+
+
 
 describe("Check the functionality of Email Suppression" ,()=>{
     const badRoute = '/email-suppresion'
@@ -27,6 +34,128 @@ describe("Check the functionality of Email Suppression" ,()=>{
         expect(wrapper).toBeDefined();
     });
 
+    test("renders component", () => {
+      const { container } = render(<MakeLabel/>);
+      expect(container).toMatchSnapshot();
+    });
+
+  
+  
+
+     test("Testing for Api Integration", () => {
+      const sendDataToServer = jest.fn();
+      // const user = {
+      //   firstName: "Mo",
+      //   lastName: "Dwina",
+      //   email: "b@b.com",
+      //   id: "123",
+      // };
+      const email="singhalarun03@gmail.com"
+      // const { queryByText } = render(
+      //   <UserCard user={user} handleDelete={handleDelete} />
+      // );
+
+
+      const {queryByText} = render(
+        <MemoryRouter initialEntries={[badRoute]}>
+          <App />
+            
+        </MemoryRouter>
+           )
+
+
+    
+      const button = queryByText("Submit");
+      console.log(button)
+      fireEvent.click(button);
+    
+     
+      //  expect(sendDataToServer).toHaveBeenCalledTimes(1);
+    });
+
+
+
+    test('should throw error when axios post error', () => {
+      jest.mock('axios')
+      const mockedMouseEvent = {
+        preventDefault: jest.fn()
+      };
+      const mockedError = new Error('network error');
+      const wrapper = shallow(<MakeLabel/>);
+      expect(wrapper.find('button')).toHaveLength(1);
+      // (axios.post as jest.MockedFunction).mockRejectedValueOnce(mockedError);
+
+      const consoleLogSpyOn = jest.spyOn(console, 'log');
+      
+      wrapper.find('button').simulate('click', mockedMouseEvent);
+      expect(wrapper.find('button').text()).toBe('Submit');
+      //  expect(axios.post).toBeCalledWith('/logout');
+
+    })
+    //   (axios.post as jest.MockedFunction<typeof axios.post>).mockRejectedValueOnce(mockedError);
+    //   const consoleLogSpyOn = jest.spyOn(console, 'log');
+    //   wrapper.find('button').simulate('click', mockedMouseEvent);
+    //   expect(wrapper.find('button').text()).toBe('Logout');
+    //   expect(axios.post).toBeCalledWith('/logout');
+
+    //   setImmediate(() => {
+    //     expect(consoleLogSpyOn).toBeCalledWith(mockedError);
+    //     consoleLogSpyOn.mockRestore();
+    //     done();
+    //   });
+    // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
     test("<MakeLabel/>" ,()=>{
 
@@ -51,11 +180,7 @@ describe("Check the functionality of Email Suppression" ,()=>{
         expect(screen.getByTestId("submit").textContent).toEqual("Submit")   //Check the text content of Button
         expect(screen.getByTestId("submit").getAttribute("disabled")).toBe(null)  //Check Submit Button is active or not
         
-
-
-
-
-    } )
+   } )
 
 
     test("Backend function is calling" , ()=>{

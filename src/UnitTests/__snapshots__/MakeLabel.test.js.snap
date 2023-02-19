@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check the functionality of Email Suppression renders component 1`] = `
+<div>
+  <div
+    style="margin: auto auto auto 300px;"
+  >
+    <div
+      class="mt-4 mx-5 container"
+      style="width: 600px; display: inline-block;"
+    >
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        data-testid="tooltip"
+        tabindex="0"
+        title="Please Enter Email to remove from Suppression"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <div
+            style="width: 28px; display: inline-block; color: green; margin-top: 1px;"
+          >
+            <svg
+              aria-hidden="true"
+              class="spectrum-Icon_368b34 spectrum-Icon--sizeM_368b34"
+              focusable="false"
+              role="img"
+              viewBox="0 0 36 36"
+            >
+              <path
+                d="M18,2A16,16,0,1,0,34,18,16,16,0,0,0,18,2Zm-.3,4.3a2.718,2.718,0,0,1,2.864,2.824A2.664,2.664,0,0,1,17.7,11.987a2.705,2.705,0,0,1-2.864-2.864A2.717,2.717,0,0,1,17.7,6.3ZM22,27a1,1,0,0,1-1,1H15a1,1,0,0,1-1-1V25a1,1,0,0,1,1-1h1V18H15a1,1,0,0,1-1-1V15a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1v9h1a1,1,0,0,1,1,1Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </div>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <div
+        class="my-4 mx-1"
+        style="display: inline-block; width: 450px; margin-top: 300px;"
+      >
+        <input
+          class="form-control"
+          data-testid="email-input"
+          id="email-box"
+          placeholder="Enter Email"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="text-center mt-1 container"
+      >
+        <button
+          class="btn btn-primary"
+          data-testid="submit"
+          id="submit"
+          type="submit"
+        >
+          Submit
+        </button>
+        <div
+          class="Toastify"
+        />
+      </div>
+    </div>
+    <br />
+    <br />
+    <span
+      class="my-4 "
+      id="detail"
+      style="font-weight: bold; margin-left: 320px; color: red;"
+    >
+       
+    </span>
+    <h4>
+       HTTP Status:
+      <span
+        class="my-4 "
+        data-testid="status"
+        id="status1"
+        style="font-weight: bold; color: green;"
+      />
+         
+    </h4>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <h3>
+      Your Valid Input Email: 
+      <span
+        class="my-4 "
+        id="email-id"
+        style="font-weight: bold; margin-top: 200px; color: purple;"
+      />
+        
+    </h3>
+  </div>
+</div>
+`;

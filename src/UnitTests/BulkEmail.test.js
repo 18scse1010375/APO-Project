@@ -18,7 +18,7 @@ describe("Check the functionality of Bulk Email" ,()=>{
 
     const badRoute = '/bulk-email-sent'
 
-    test("Verify Email Suppression is successfuly rendered or not"  ,()=>{
+    test("Verify Bulk Email  is successfuly rendered or not"  ,()=>{
 
     let wrapper=shallow( <BulkEmail/> )
       expect(wrapper).toBeDefined();

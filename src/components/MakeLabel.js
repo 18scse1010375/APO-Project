@@ -159,6 +159,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const sendDataToServer = (email) => {
+
+  console.log("ji")
   const status2 = document.getElementById("status1")
   console.log("Your Send Data To Server function is loading.....")
   console.log("Email is :", email)
@@ -202,38 +204,38 @@ const MakeLabel = () => {
   const [email, setEmail] = useState('')
 
 
-  const validateEmail = (e) => {
-    const email = e.target.value
-    const printEmail = document.getElementById("email-id")
+  // const validateEmail = (e) => {
+  //   const email = e.target.value
+  //   const printEmail = document.getElementById("email-id")
 
-    var btn = document.getElementById("submit")
-    var mess = document.getElementById("detail")
-
-
-
-    if (validator.isEmail(email) && email.charAt(email.length - 1) == 'm') {
-      setEmailError('Valid Email')
-      sendDataToServer(email);
-
-
-      btn.disabled = "";
-      mess.style.color = "green"
-
-
-      printEmail.innerHTML = email
+  //   var btn = document.getElementById("submit")
+  //   var mess = document.getElementById("detail")
 
 
 
+  //   if (validator.isEmail(email) && email.charAt(email.length - 1) == 'm') {
+  //     setEmailError('Valid Email')
+  //     sendDataToServer(email);
 
-    } else {
-      setEmailError('Enter valid Email!')
-      btn.disabled = "disabled"
-      mess.style.color = "red"
-      printEmail.innerHTML = ""
 
-    }
+  //     btn.disabled = "";
+  //     mess.style.color = "green"
 
-  }
+
+  //     printEmail.innerHTML = email
+
+
+
+
+  //   } else {
+  //     setEmailError('Enter valid Email!')
+  //     btn.disabled = "disabled"
+  //     mess.style.color = "red"
+  //     printEmail.innerHTML = ""
+
+  //   }
+
+  // }
 
   return (
     <>

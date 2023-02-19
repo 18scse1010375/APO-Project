@@ -15,18 +15,6 @@ import MakeHeader from 'components/MakeHeader';
  import { Child , LocationDisplay } from 'components/UrlPath';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 function App() {
 
    

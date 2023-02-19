@@ -111,6 +111,24 @@ expect(wrapper.contains(  <Item key="exit">Logout</Item> )).toBeTruthy();
 })
 
 
+test("Url path is changing on going  different location" ,()=>{
+  const route = '/home'
+
+// use <MemoryRouter> when you want to manually control the history
+const {debug}=render(
+  <MemoryRouter initialEntries={[route]}>
+    <LocationDisplay />
+  </MemoryRouter>,
+)
+debug()
+
+// verify location display is rendered
+expect(screen.getByTestId('location-display')).toHaveTextContent(route)
+
+
+
+}    )
+
     
 
     
