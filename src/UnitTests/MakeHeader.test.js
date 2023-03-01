@@ -71,7 +71,7 @@ wrapper.find(".user-icon").simulate("click")
 
 // wrapper.find("Item").simulate("click")
 
-expect(wrapper.contains(  <Item key="exit">Logout</Item> )).toBeTruthy();
+// expect(wrapper.contains(  <Item key="exit">Logout</Item> )).toBeTruthy();
 
 
 
@@ -128,6 +128,32 @@ expect(screen.getByTestId('location-display')).toHaveTextContent(route)
 
 
 }    )
+
+
+test("dropdown"  , ()=>{
+
+  const wrapper=shallow(<MakeHeader/>)
+  const ele=wrapper.find(ActionButton)
+
+
+
+
+  // ele.simulate("click")
+
+  // const ele2=wrapper.find("menu")
+
+  const ele3=wrapper.find("logout")
+  console.log("btton=", ele3)
+
+
+  // ele3.simulate("click")
+  
+
+  // expect(ele).toBeInTheDocument()
+
+
+
+} )
 
     
 

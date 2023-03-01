@@ -11,36 +11,18 @@ const BulkEmail = () => {
 
     const [File, setFile] = useState("")
 
-
-    
-
     const onFileChange = event => {
         setFile(event.target.files[0])
     };
 
-
-    const onFileUpload = () => {
+    const onFileUpload = async() => {
 
         if (File) {
+            console.log("if is calling...")
             const formData = new FormData();
             formData.append("file111",File);
-
-            
-
-            let connection = {
-                method: "POST",
-                url: `${base_url}/upload`,
-                params: formData ,
-             headers: { 'Content-Type': 'multipart/form-data' }
-            }
-            console.log("Your Updated Form-data=", formData)
-            // try {
-            //     axios(connection).then((Response) => console.log("Respond from Server", Response.data), (error) => console.log(error))
-            // } catch (error) {
-            //     console.log(error)
-            // }
               
-            axios.post(`${base_url}/upload`,formData).then(
+            await axios.post(`${base_url}/upload`,formData).then(
 
                 (Response)=>{console.log(Response.data) ; document.getElementById("respond1").innerHTML=Response.data ;  Response.data[0]=='S' ?  toast.error("Uploading Fail!!!")  : toast.success("Uploading Success!!!")     },
                 (error) => {console.log(error); toast.error("something went wrong!!!") }  
@@ -48,8 +30,16 @@ const BulkEmail = () => {
 
         }
         else {
+
+            console.log("else is calling")
+            
             toast.warning("Please Upload Excel File First")
-             document.getElementById("respond1").innerHTML="Please upload  Excel file first!!!"
+            const ele=document.getElementById("repsond1")
+            {
+            
+            ele ?  document.getElementById("respond1").innerHTML="Please upload  Excel file first!!!"  :   ""
+
+            }
         }
 
     };
@@ -65,10 +55,13 @@ const BulkEmail = () => {
 
                     <p>File Type: {File.type}</p>
 
-                    <p>
-                        Last Modified:{" "}
-                        {File.lastModifiedDate.toDateString()}
-                    </p>
+                    {
+                     File.lastModifiedDate ? <p>
+                     Last Modified:{" "}
+                     {File.lastModifiedDate.toDateString()}
+                 </p>     :   ""  
+                    
+                    }
 
                 </div>
             );
@@ -94,7 +87,7 @@ const BulkEmail = () => {
           
             <div>
 
-                <input data-testid="file-input" type="file" onChange={(event) => onFileChange(event)} />
+                <input  id="file-upload" data-testid="file-input" type="file" onChange={(event) => onFileChange(event)} />
                 <br/>
 
 
@@ -106,8 +99,8 @@ const BulkEmail = () => {
            
            <Container className='my-3 text-warning' style={{textColor:'white'}}>
             <ToastContainer position='bottom-center'/>
-                {/* <p>  <span  id="respond1"></span>   </p> */}
-                <p id='respond1'></p>
+                <p>  <span  id="respond1"></span>   </p>
+                
                 </Container>
 
   
@@ -115,7 +108,7 @@ const BulkEmail = () => {
 
             
 
-            <div className='bg-success my-3 p-3 '>
+            <div id='preview' className='bg-success my-3 p-3 '>
                 {fileData()}
             </div>
         </div>

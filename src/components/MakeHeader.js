@@ -73,7 +73,7 @@ const MakeHeader = () => {
               </div>
 
               <div className="user-icon">
-                <Provider>
+                <Provider data-testid="dropdown">
                   <MenuTrigger>
 
                     <ActionButton aria-label="Icon only" href="/logout" >
@@ -81,10 +81,10 @@ const MakeHeader = () => {
                     </ActionButton>
 
 
-                    <Menu onAction={(key) => actionOnMenu(key)}>
+                    <Menu id="menu" onAction={(key) => actionOnMenu(key)}>
 
 
-                      <Item key="exit">Logout</Item>
+                      <Item key="exit" id="logout">Logout</Item>
 
                     </Menu>
                   </MenuTrigger>

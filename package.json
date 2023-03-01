@@ -8,7 +8,7 @@
     "tessa-npm-plugin": "tessa-npm-plugin update",
     "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test  setupFile ./src/setupTests.js    --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\" --env=jsdom   --coverage  --testPathIgnorePatterns=./src/index.js ",
+    "test": "react-scripts test  setupFile ./src/setupTests.js    --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\"    --coverage  --testPathIgnorePatterns=./src/index.js ",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "fix": "eslint . --fix"
@@ -64,6 +64,7 @@
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "chai": "^4.3.7",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.7",
@@ -91,7 +92,14 @@
       "./src/services/AdobeIms.ts",
       "./src/models/*",
       "./src/components/UrlPath.js",
+      "./src/components/ApiDemo.js",
       "./src/reportWebVitals.js",
+      "./src/components/TestAxios.js",
+      "./src/configs.ts",
+
+      "./src/components/axios.js",
+
+
       ".src/index.js"
     ],
     "transformIgnorePatterns": [

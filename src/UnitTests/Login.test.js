@@ -6,6 +6,8 @@ import { shallow } from "enzyme";
 import React from 'react';
 import App from 'App';
 
+import { adobeIms } from "../services/AdobeIms.ts";
+
 import { Router, Route } from "react-router";
 import { createMemoryHistory } from 'history';
 
@@ -82,10 +84,26 @@ describe("<Login/>", () => {
         const wrapper=shallow( <Login/> )
         expect(wrapper).toMatchSnapshot();
         
+      } )  
+
+
+
+      test("Signin function is calling or not", ()=>{
+        
+        const {debug}= render(<Login/>)
+        debug();
+        const element=screen.getByTestId("login")
+
+        jest.spyOn(console,"error").mockImplementation( ()=>console.log("")  )  
+
+        jest.spyOn(console,"warn").mockImplementation( ()=>console.log("")  )
+
+        fireEvent.click(element)
+
         
 
 
 
-      } )
+      }  )
 
 })

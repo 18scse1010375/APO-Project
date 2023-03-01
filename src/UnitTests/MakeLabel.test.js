@@ -43,18 +43,13 @@ describe("Check the functionality of Email Suppression" ,()=>{
   
 
      test("Testing for Api Integration", () => {
+      // jest.mock('axios')
+      // jest.spyOn(axios, 'get').mockResolvedValueOnce({});
+      // axios.get.mockImplementation(() => Promise.resolve({ status: 200, data: {} }));
       const sendDataToServer = jest.fn();
-      // const user = {
-      //   firstName: "Mo",
-      //   lastName: "Dwina",
-      //   email: "b@b.com",
-      //   id: "123",
-      // };
+      
       const email="singhalarun03@gmail.com"
-      // const { queryByText } = render(
-      //   <UserCard user={user} handleDelete={handleDelete} />
-      // );
-
+      
 
       const {queryByText} = render(
         <MemoryRouter initialEntries={[badRoute]}>
@@ -68,9 +63,12 @@ describe("Check the functionality of Email Suppression" ,()=>{
       const button = queryByText("Submit");
       console.log(button)
       fireEvent.click(button);
+      
     
+    //  expect(sendDataToServer).toHaveBeenCalledTimes(1);
      
-      //  expect(sendDataToServer).toHaveBeenCalledTimes(1);
+    //  expect(axios.get).toHaveBeenCalledTimes(1) 
+
     });
 
 
@@ -89,75 +87,13 @@ describe("Check the functionality of Email Suppression" ,()=>{
       
       wrapper.find('button').simulate('click', mockedMouseEvent);
       expect(wrapper.find('button').text()).toBe('Submit');
-      //  expect(axios.post).toBeCalledWith('/logout');
-
+      
     })
-    //   (axios.post as jest.MockedFunction<typeof axios.post>).mockRejectedValueOnce(mockedError);
-    //   const consoleLogSpyOn = jest.spyOn(console, 'log');
-    //   wrapper.find('button').simulate('click', mockedMouseEvent);
-    //   expect(wrapper.find('button').text()).toBe('Logout');
-    //   expect(axios.post).toBeCalledWith('/logout');
-
-    //   setImmediate(() => {
-    //     expect(consoleLogSpyOn).toBeCalledWith(mockedError);
-    //     consoleLogSpyOn.mockRestore();
-    //     done();
-    //   });
-    // });
+    
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-    test("<MakeLabel/>" ,()=>{
+        test("<MakeLabel/>" ,()=>{
 
         render(
             <MemoryRouter initialEntries={[badRoute]}>
@@ -184,7 +120,9 @@ describe("Check the functionality of Email Suppression" ,()=>{
 
 
     test("Backend function is calling" , ()=>{
-      const sendDataToServerSpy = jest.fn();
+      // const sendDataToServerSpy = jest.fn();
+      jest.spyOn(axios, 'post').mockResolvedValueOnce({id:9,title:"abc" , description:"aa" });
+
       const badRoute="/email-suppresion"
 
   
@@ -204,8 +142,9 @@ describe("Check the functionality of Email Suppression" ,()=>{
 
     const btn=screen.getByTestId("submit")
 
+     fireEvent.click(btn); //verification for the click event
 
-    fireEvent.click(btn); //verification for the click event
+
 
     expect(screen.getByTestId("status"))
 

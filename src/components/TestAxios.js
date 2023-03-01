@@ -5,7 +5,7 @@ import axios from "axios";
 import React, { useState,useEffect } from "react";
 
 
-export const ServerTesting = ({url}) => {
+export const TestAxios = ({url}) => {
     const [state,setState]=useState([])
 
     useEffect(()=>{
@@ -14,6 +14,7 @@ export const ServerTesting = ({url}) => {
             (error)=>console.log(error)
         )
     } , []    ) 
+
   return (
     <div>
 
@@ -21,7 +22,7 @@ export const ServerTesting = ({url}) => {
         {/* state.map((item)=>{<h1>  item.id </h1> }  ) */}
         
 
-       { state.length ? <p data-testid="title"> Data is comming </p>   :  <h2>Loading...</h2>   } 
+       { state.length ? <p data-testid="title">ttt </p>   :  <h2>Loading...</h2>   } 
         
     </div>
   )
