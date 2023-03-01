@@ -8,6 +8,7 @@
     "tessa-npm-plugin": "tessa-npm-plugin update",
     "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
+    "prebuild": "npm run lint && npm run test",
     "test": "react-scripts test  setupFile ./src/setupTests.js    --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\"    --coverage  --testPathIgnorePatterns=./src/index.js ",
     "eject": "react-scripts eject",
     "lint": "eslint .",

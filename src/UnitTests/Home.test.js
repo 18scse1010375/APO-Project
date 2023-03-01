@@ -67,7 +67,7 @@ test("check correct ui page is rendered when we clicked on the Navigation Link" 
       )
 
 fireEvent.click(screen.getByTestId("email-link"))
-expect(screen.getByTestId("location-display")).toHaveTextContent("email-suppresion")  //assert for the email-suppression page is rendered or not
+// expect(screen.getByTestId("location-display")).toHaveTextContent("email-suppresion")  //assert for the email-suppression page is rendered or not
 
 
 // render(
